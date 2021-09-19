@@ -1,0 +1,12 @@
+server:
+  port: 7071
+spring:
+  application:
+    name: nomosnow-config-server
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+          uri: https://github.com/eroscupid88/nomosnow-config-repository
+          searchPaths: sport-event-configuration

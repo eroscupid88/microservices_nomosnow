@@ -1,0 +1,10 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: sport-event-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:7071
