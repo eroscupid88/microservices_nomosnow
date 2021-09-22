@@ -17,7 +17,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
  * SportEventController map API and return response json
  */
 @RestController
-@RequestMapping(value = {"v1/sportEvent"})
+@RequestMapping(value = {"v1/sportOrganization/{sportOrganizationId}/sportEvent"})
 public class SportEventController {
     // autowired SportEventService class
     @Autowired
@@ -48,7 +48,6 @@ public class SportEventController {
                                                     .updateSportEvent(sportEvent))
                                                     .withRel("updateSportEvent"))))
                             .orElseGet(() -> ResponseEntity.notFound().build());
-
     }
 
     //Post method
@@ -57,7 +56,7 @@ public class SportEventController {
      * @param sportEvent from request body
      * @return HTTP response with status codes, headers and body of sportEvent
      */
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<SportEvent> createSportEvent(
             @RequestBody SportEvent sportEvent) {
         return ResponseEntity.ok(sportEventService.createSportEvent(sportEvent));
