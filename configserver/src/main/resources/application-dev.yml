@@ -9,4 +9,4 @@ spring:
         git:
           default-label: main
           uri: https://github.com/eroscupid88/nomosnow-config-repository
-          searchPaths: sport-event-configuration,eureka-server*
+          searchPaths: sport-event-configuration,eureka-server*,sport-organization-configuration*
