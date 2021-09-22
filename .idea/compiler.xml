@@ -17,7 +17,7 @@
       <module name="configserver" target="11" />
       <module name="nomosnow-config-server" target="11" />
       <module name="nomosnow_cloud_configuration_server" target="11" />
-      <module name="sport_event_service" target="1.8" />
+      <module name="sport_event_service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
