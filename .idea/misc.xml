@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/sport_event_service/pom.xml" />
         <option value="$PROJECT_DIR$/nomosno_cloud_configuration_server/pom.xml" />
         <option value="$PROJECT_DIR$/configserver/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

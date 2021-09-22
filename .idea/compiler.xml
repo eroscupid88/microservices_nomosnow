@@ -10,11 +10,13 @@
         <module name="sport_event_service" />
         <module name="nomosnow_cloud_configuration_server" />
         <module name="configserver" />
+        <module name="eureka-server" />
         <module name="nomosnow-config-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configserver" target="11" />
+      <module name="eureka-server" target="11" />
       <module name="nomosnow-config-server" target="11" />
       <module name="nomosnow_cloud_configuration_server" target="11" />
       <module name="sport_event_service" target="11" />
@@ -23,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configserver" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="nomosnow-config-server" options="-parameters" />
       <module name="nomosnow_cloud_configuration_server" options="-parameters" />
       <module name="sport_event_service" options="-parameters" />
