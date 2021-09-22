@@ -14,5 +14,6 @@ import org.springframework.context.annotation.Configuration;
  * Method to pass configuration from config server by using prefix
  */
 public class ConfigService {
+    // todo
     private String property;
 }
