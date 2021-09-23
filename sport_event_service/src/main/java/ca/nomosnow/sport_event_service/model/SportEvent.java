@@ -13,21 +13,15 @@ import javax.persistence.Column;
 // using JPA :data persisted to database
 @Getter @Setter @ToString
 @Entity
-@Table(name = "sportevent")
+@Table(name = "sportevents")
 public class SportEvent extends RepresentationModel<SportEvent> {
     @Id
     @Column(name = "sportevent_id",nullable = false)
     private String sportEventId;
     @Column(name = "organization_id" ,nullable = false)
     private String organizationId;
-    @Column(name ="organization_name" , nullable= false)
-    private String organizationName;
     @Column(name ="event_name" , nullable= false)
-    private String eventName;
-    @Column(name ="event_type" , nullable= false)
-    private String eventType;
-    @Column(name ="event_location" , nullable= false)
-    private String eventLocation;
+    private String sportEventName;
     @Column(name ="comment" , nullable= true)
     private String comment;
 

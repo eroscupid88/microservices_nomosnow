@@ -19,37 +19,38 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
  * SportEventController map API and return response json
  */
 @RestController
-@RequestMapping(value = {"v1/sportOrganization/{sportOrganizationId}/sportEvent"})
+@RequestMapping(value = {"/v1/sportOrganization/{sportOrganizationId}/sportEvent"})
 public class SportEventController {
     //    Log any event with Controller
     private static final Logger logger = LoggerFactory.getLogger(SportEventController.class);
     // autowired SportEventService class
     @Autowired
     private SportEventService sportEventService;
-    @Autowired
-    SportEventRepository sportEventRepository;
+
 
     //Get Method and href
 
     /**
      * getSportEvent method return HTTP response
-     *
+     * @param organizationId path variable
      * @param id sportEventId path variable
-     * @return HTTP response contain headers, body and status code of SportEvent object
+     * @return HTTP response SportEvent Object contain headers, body and status code of SportEvent object
      */
     @GetMapping(value = "/{sportEventId}")
-    public ResponseEntity<SportEvent> getSportEvent(@PathVariable("sportEventId") String id) {
-            SportEvent sportEvent = sportEventService.getSportEvent(id);
+    public ResponseEntity<SportEvent> getSportEvent(@PathVariable("sportOrganizationId")String organizationId,
+                                                    @PathVariable("sportEventId") String id,
+                                                    @RequestHeader(value = "Accept-Language",required = false) Locale locale) {
+            SportEvent sportEvent = sportEventService.getSportEvent(organizationId,id,locale);
             return Optional.ofNullable(sportEvent)
                             .map(user -> ResponseEntity.ok().body(user
-                                                    .add(linkTo(methodOn(SportEventController.class)
-                                                    .getSportEvent(id))
+                                    .add(linkTo(methodOn(SportEventController.class)
+                                                    .getSportEvent(organizationId,id,locale))
                                                     .withSelfRel(),
                                                     linkTo(methodOn(SportEventController.class)
-                                                    .createSportEvent(sportEvent))
+                                                    .createSportEvent(sportEvent,locale))
                                                     .withRel("createSportEvent"),
                                                     linkTo(methodOn(SportEventController.class)
-                                                    .updateSportEvent(sportEvent))
+                                                    .updateSportEvent(sportEvent,locale))
                                                     .withRel("updateSportEvent"))))
                             .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -58,23 +59,38 @@ public class SportEventController {
     /**
      * createSportEvent method pass request body sportEvent and return HTTP response
      * @param sportEvent from request body
-     * @return HTTP response with status codes, headers and body of sportEvent
+     * @return HTTP response SportEvent Object with status codes, headers and body of sportEvent
      */
     @PostMapping()
     public ResponseEntity<SportEvent> createSportEvent(
-            @RequestBody SportEvent sportEvent) {
-        return ResponseEntity.ok(sportEventService.createSportEvent(sportEvent));
+            @RequestBody SportEvent sportEvent,
+            @RequestHeader(value = "Accept-Language",required = false) Locale locale) {
+        return ResponseEntity.ok(sportEventService.createSportEvent(sportEvent,locale));
     }
     //Put Method
     @PutMapping
     /**
      * updateSportEvent method pass request body, update sportEvent and return HTTP response
      * @param sportEvent from request body
-     * @return HTTP response with status codes, headers and body of sportEvent
+     * @return HTTP response SportEvent Object with status codes, headers and body of sportEvent
      */
     public ResponseEntity<SportEvent>updateSportEvent(
-            @RequestBody SportEvent sportEvent){
-        return ResponseEntity.ok(sportEventService.updateSportEvent(sportEvent));
+            @RequestBody SportEvent sportEvent,
+            @RequestHeader(value = "Accept-Language",required = false) Locale locale){
+        return ResponseEntity.ok(sportEventService.updateSportEvent(sportEvent,locale));
+    }
+
+    /**
+     * delete sportEvent with given Id
+     * @param sportEventId String
+     * @return HTTP response String with status codes, headers and body of sportEvent
+     *
+     */
+    @DeleteMapping(value="/{sportEventId}")
+    public ResponseEntity<String> deleteSportEvent(@PathVariable("sportEventId") String sportEventId,
+                                                   @RequestHeader(value = "Accept-Language",required = false) Locale locale)
+    {
+        return ResponseEntity.ok(sportEventService.deleteSportEvent(sportEventId,locale));
     }
 }
 

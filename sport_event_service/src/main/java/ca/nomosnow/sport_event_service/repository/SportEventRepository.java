@@ -6,6 +6,6 @@ import java.util.List;
 
 @Repository
 public interface SportEventRepository extends CrudRepository<SportEvent, String> {
-    public SportEvent findSportEventBySportEventId(String sportEventId);
-    public List<SportEvent> findByOrganizationId(String organizationId);
+    SportEvent findByOrganizationIdAndSportEventId(String organizationId,String sportEventId);
+//    List<SportEvent> findByOrganizationId(String organizationId);
 }

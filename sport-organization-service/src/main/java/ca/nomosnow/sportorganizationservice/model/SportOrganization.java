@@ -1,5 +1,6 @@
 package ca.nomosnow.sportorganizationservice.model;
 
+import ca.nomosnow.sportorganizationservice.config.ConfigService;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,4 +22,13 @@ public class SportOrganization {
     private String sportOrganizationEmail;
     @Column(name = "phone",nullable = false)
     private String sportOraganizationPhone;
+    @Transient
+    private String comment;
+
+    public SportOrganization withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+
 }
