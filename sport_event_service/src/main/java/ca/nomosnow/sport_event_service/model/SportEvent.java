@@ -24,7 +24,6 @@ public class SportEvent extends RepresentationModel<SportEvent> {
     private String sportEventName;
     @Column(name ="comment" , nullable= true)
     private String comment;
-
     public SportEvent withComment(String comment) {
         this.setComment(comment);
         return this;
