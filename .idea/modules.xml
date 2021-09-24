@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/configserver/config-server.iml" filepath="$PROJECT_DIR$/configserver/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-server/gateway-server.iml" filepath="$PROJECT_DIR$/gateway-server/gateway-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sport-organization-service/sport-organization-service.iml" filepath="$PROJECT_DIR$/sport-organization-service/sport-organization-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sport_event_service/sport_event_service.iml" filepath="$PROJECT_DIR$/sport_event_service/sport_event_service.iml" />
+    </modules>
+  </component>
+</project>
