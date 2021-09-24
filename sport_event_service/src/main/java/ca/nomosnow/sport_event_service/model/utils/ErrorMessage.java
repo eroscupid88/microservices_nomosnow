@@ -1,9 +1,7 @@
 package ca.nomosnow.sport_event_service.model.utils;
 
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -37,7 +35,6 @@ public class ErrorMessage {
 		this.message = message;
 		this.detail = detail;
 	}
-
 	/**
 	 * Construc ErrorMessage with 1 arguments
 	 * @param message String message

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-@Table(name = "sporteventorganization")
+@Table(name = "sporteventorganizations")
 public class SportOrganization {
     @Id
     @Column(name = "organization_id",nullable = false)
@@ -22,7 +22,7 @@ public class SportOrganization {
     private String sportOrganizationEmail;
     @Column(name = "phone",nullable = false)
     private String sportOraganizationPhone;
-    @Transient
+    @Column(name = "comment",nullable = true)
     private String comment;
 
     public SportOrganization withComment(String comment) {

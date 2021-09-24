@@ -55,6 +55,15 @@ public class SportEventController {
                             .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @RequestMapping(value="/{sportEventId}/{clientType}",method = RequestMethod.GET)
+    public SportEvent getSportEventWithClient(@PathVariable("sportEventId") String sportEventId,
+                                              @PathVariable("sportOrganizationId") String organizationId,
+                                              @RequestHeader(value = "Accept-Language",required = false) Locale locale,
+                                              @PathVariable("clientType") String clientType) {
+
+        return sportEventService.getSportEventWithClient(sportEventId, organizationId, locale, clientType);
+    }
+
     //Post method
     /**
      * createSportEvent method pass request body sportEvent and return HTTP response

@@ -2,7 +2,11 @@ package ca.nomosnow.sport_event_service.service;
 
 import ca.nomosnow.sport_event_service.config.ConfigService;
 import ca.nomosnow.sport_event_service.model.SportEvent;
+import ca.nomosnow.sport_event_service.model.SportOrganization;
 import ca.nomosnow.sport_event_service.repository.SportEventRepository;
+import ca.nomosnow.sport_event_service.service.client.SportOrganizationDiscoveryClient;
+import ca.nomosnow.sport_event_service.service.client.SportOrganizationFeignClient;
+import ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
@@ -25,7 +29,12 @@ public class SportEventService {
     SportEventRepository sportEventRepository;
     @Autowired
     ConfigService configService;
-
+    @Autowired
+    SportOrganizationFeignClient sportOrganizationFeignClient;
+    @Autowired
+    SportOrganizationDiscoveryClient sportOrganizationDiscoveryClient;
+    @Autowired
+    SportOrganizationRestTemplateClient sportOrganizationRestTemplateClient;
 
     /**
      *
@@ -77,6 +86,45 @@ public class SportEventService {
         return String.format(messageSource.getMessage("sportEvent.delete.message",null,locale),id);
     }
 
+
+    public SportEvent getSportEventWithClient(String sportEventId, String organizationId,Locale locale, String clientType){
+        SportEvent sportEvent = sportEventRepository.findByOrganizationIdAndSportEventId(organizationId, sportEventId);
+        if (null == sportEvent) {
+            throw new IllegalArgumentException(String.format(
+                    messageSource.getMessage("sportEvent.search.error.message", null, locale),
+                    sportEventId, organizationId));
+        }
+        SportOrganization sportOrganization = retrieveOrganizationInfo(organizationId,
+                clientType);
+        if (sportOrganization != null) {
+            sportEvent.setSportOrganizationName(sportOrganization.getSportOrganizationName());
+            sportEvent.setSportOrganizationPhone(sportOrganization.getSportOrganizationPhone());
+            sportEvent.setSportOrganizationEmail(sportOrganization.getSportOrganizationEmail());
+
+        }
+        return sportEvent.withComment(configService.getProperty());
+    }
+    private SportOrganization retrieveOrganizationInfo(String organizationId, String clientType) {
+        SportOrganization organization = null;
+
+        switch (clientType) {
+            case "feign":
+                System.out.println("I am using the feign client");
+                organization = sportOrganizationFeignClient.getSportOrganization(organizationId);
+                break;
+            case "rest":
+                System.out.println("I am using the rest client");
+                organization = sportOrganizationRestTemplateClient.getSportOrganization(organizationId);
+                break;
+            case "discovery":
+                System.out.println("I am using the discovery client");
+                organization = sportOrganizationDiscoveryClient.getSportOrganization(organizationId);
+                break;
+            default:
+                organization = sportOrganizationRestTemplateClient.getSportOrganization(organizationId);
+        }
+        return organization;
+    }
 
 
 }

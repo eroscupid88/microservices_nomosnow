@@ -14,4 +14,6 @@ public class SportOrganizationServiceApplication {
         SpringApplication.run(SportOrganizationServiceApplication.class, args);
     }
 
+
+
 }

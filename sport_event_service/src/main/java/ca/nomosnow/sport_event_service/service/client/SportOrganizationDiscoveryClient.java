@@ -21,7 +21,7 @@ public class SportOrganizationDiscoveryClient  {
         RestTemplate restTemplate = new RestTemplate();
         List<ServiceInstance> instances = discoveryClient.getInstances("sport-organization-service");
         if (instances.size() == 0) return null;
-        String serviceUri = String.format("%s/v1/organization/%s",instances.get(0).getUri());
+        String serviceUri = String.format("%s/v1/sportOrganization/%s",instances.get(0).getUri(),sportOrganizationId);
         ResponseEntity<SportOrganization> restExchange = restTemplate.exchange(serviceUri,
                 HttpMethod.GET,
                 null,

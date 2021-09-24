@@ -10,4 +10,6 @@ import org.springframework.hateoas.RepresentationModel;
 public class SportOrganization extends RepresentationModel<SportOrganization> {
     private String id;
     private String sportOrganizationName;
+    private String sportOrganizationEmail;
+    private String sportOrganizationPhone;
 }

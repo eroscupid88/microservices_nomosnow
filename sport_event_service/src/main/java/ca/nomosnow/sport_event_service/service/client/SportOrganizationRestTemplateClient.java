@@ -14,10 +14,10 @@ public class SportOrganizationRestTemplateClient {
     @Autowired
     RestTemplate restTemplate;
 
-    public SportOrganization getOrganization(String organizationId){
+    public SportOrganization getSportOrganization(String organizationId){
         ResponseEntity<SportOrganization> restExchange =
                 restTemplate.exchange(
-                        "http://sport-organization-service/v1/organization/{organizationId}",
+                        "http://sport-organization-service/v1/sportOrganization/{organizationId}",
                         HttpMethod.GET,
                         null, SportOrganization.class, organizationId);
 

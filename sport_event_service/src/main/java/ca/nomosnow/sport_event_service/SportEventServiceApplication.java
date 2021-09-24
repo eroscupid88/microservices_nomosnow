@@ -34,7 +34,7 @@ public class SportEventServiceApplication {
     /**
      * locateResolver method create default Locate.CANADA as location
      */
-    public LocaleResolver localeResolver() {
+    public LocaleResolver localeResolvers() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
         //set CANADA as default locate
         localeResolver.setDefaultLocale(Locale.CANADA);
