@@ -7,13 +7,26 @@ import ca.nomosnow.sport_event_service.repository.SportEventRepository;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationDiscoveryClient;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationFeignClient;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient;
+
+import java.util.*;
+
+import ca.nomosnow.sport_event_service.utils.UserContextHolder;
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.ILoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
 
-import java.util.Locale;
-import java.util.UUID;
+import java.util.concurrent.TimeoutException;
 
 
 /*
@@ -22,7 +35,7 @@ SportEventService create command and invoke SportEvent functions
 // need to add this annotation to have @Autowire
 @Service
 public class SportEventService {
-
+    private static final Logger logger = LoggerFactory.getLogger(SportEventService.class);
     @Autowired
     MessageSource messageSource;
     @Autowired
@@ -126,5 +139,53 @@ public class SportEventService {
         return organization;
     }
 
+    @CircuitBreaker(name="sportEventService",
+                    fallbackMethod = "fallbackMethodForCircuitBreaker")
+
+    @RateLimiter(name ="sportEventService",
+            fallbackMethod = "fallbackMethodForCircuitBreaker")
+    @Retry(name="retrySportEventService",
+            fallbackMethod= "fallbackMethodForCircuitBreaker")
+    @Bulkhead(name = "bulkheadSportEventService",
+            //                 type default  of bulkhead is semaphore//
+            type= Bulkhead.Type.THREADPOOL,
+            fallbackMethod="fallbackMethodForCircuitBreaker")
+    public List<SportEvent> getSportEventsByOrganizationId(String organizationId) throws TimeoutException {
+        logger.debug("Get List of SportEvents by Organization with Correlation Id: {}", UserContextHolder.getContext().getCorrelationId());
+        randomlyRunLong();
+        return sportEventRepository.findByOrganizationId(organizationId);
+    }
+
+
+    /**
+     * Fallback method when circuitBreaker open
+     * @param organizationId String organization Id
+     * @return List
+     */
+    public List<SportEvent> fallbackMethodForCircuitBreaker(String organizationId, Throwable t) {
+        List<SportEvent> fallBackList = new ArrayList<>();
+        SportEvent sportEvent = new SportEvent();
+        sportEvent.setSportEventId("00000000-0000-0000-0000-000000000000");
+        sportEvent.setOrganizationId(organizationId);
+        fallBackList.add(sportEvent);
+        return fallBackList;
+    }
+
+
+    // this 2 function use to test circuit breaker by create status 500 FAIL with timeoutException
+    private void randomlyRunLong() throws TimeoutException {
+        Random rand = new Random();
+        int randomNum = rand.nextInt(3) + 1;
+        if (randomNum==3) sleep();
+    }
+    private void sleep() throws TimeoutException {
+        try {
+            System.out.println("Sleep");
+            Thread.sleep(5000);
+            throw new java.util.concurrent.TimeoutException();
+        } catch (InterruptedException e ) {
+            logger.error(e.getMessage());
+        }
+    }
 
 }

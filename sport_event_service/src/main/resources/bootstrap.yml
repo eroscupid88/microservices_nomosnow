@@ -17,7 +17,7 @@ logging:
 # set up initialize for resilience4j implementation
 resilience4j.circuitbreaker:
   instances:
-    licenseService:
+    sportEventService:
       registerHealthIndicator: true
       ringBufferSizeInClosedState: 5
       ringBufferSizeInHalfOpenState: 3
@@ -28,7 +28,7 @@ resilience4j.circuitbreaker:
         - java.io.IOException
         - java.util.concurrent.TimeoutException
         - org.springframework.web.client.ResourceAccessException
-    organizationService:
+    sportOrganizationService:
       registerHealthIndicator: true
       ringBufferSizeInClosedState: 6
       ringBufferSizeInHalfOpenState: 4
@@ -37,14 +37,14 @@ resilience4j.circuitbreaker:
 
 resilience4j.ratelimiter:
   instances:
-    licenseService:
+    sportEventService:
       limitForPeriod: 5
       limitRefreshPeriod: 5000
       timeoutDuration: 1000ms
 
 resilience4j.retry:
   instances:
-    retryLicenseService:
+    retrySportEventService:
       maxRetryAttempts: 5
       waitDuration: 10000
       retry-exceptions:
@@ -52,7 +52,7 @@ resilience4j.retry:
 
 resilience4j.bulkhead:
   instances:
-    bulkheadLicenseService:
+    bulkheadSportEventService:
       maxWaitDuration: 2ms
       maxConcurrentCalls: 20
 
@@ -60,7 +60,7 @@ resilience4j.bulkhead:
 #(requests per second at peak when the service is healthy * 99th percentile latency in seconds) + small amount of extra threads for overhead
 resilience4j.thread-pool-bulkhead:
   instances:
-    bulkheadLicenseService:
+    bulkheadSportEventService:
       maxThreadPoolSize: 1
       coreThreadPoolSize: 1
       queueCapacity: 1
