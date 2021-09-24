@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    config:
+      uri: http://localhost:7071
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    ca.nomosnow.gatewayserver: DEBUG
+

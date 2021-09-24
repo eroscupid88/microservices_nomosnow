@@ -1,6 +1,7 @@
 package ca.nomosnow.sport_event_service;
 
 import ca.nomosnow.sport_event_service.model.SportEvent;
+import ca.nomosnow.sport_event_service.utils.UserContextInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -14,6 +15,8 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -63,7 +66,17 @@ public class SportEventServiceApplication {
     @LoadBalanced
     @Bean
     RestTemplate getRestTemplate() {
-        return new RestTemplate();
+        RestTemplate template = new RestTemplate();
+        List interceptors = template.getInterceptors();
+        if (interceptors==null){
+            template.setInterceptors(Collections.singletonList(
+                    new UserContextInterceptor()));
+        }else{
+            interceptors.add(new UserContextInterceptor());
+            template.setInterceptors( interceptors);
+        }
+
+        return template;
     }
 
 }

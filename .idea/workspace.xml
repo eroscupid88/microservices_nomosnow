@@ -23,11 +23,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/controller/SportEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/controller/SportEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/repository/SportEventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/repository/SportEventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/FilterUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/ResponseFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/TrackingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContextInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/utils/UserContextInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_12_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_12_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_12_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_12_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_12_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_eureka_eureka_client_1_10_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_eureka_eureka_core_1_10_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_x_stream_mxparser_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_7_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_native_macos_osx_x86_64_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_native_macos_osx_x86_64_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_68_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_addons_reactor_extra_3_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_core_1_0_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_core_1_0_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_http_1_0_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_http_1_0_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_53.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_5_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_5_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_5_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_5_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_3_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_client_3_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_3_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_server_3_0_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_server_3_0_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_loadbalancer_3_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_3_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_3_0_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_3_0_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_config_3_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_3_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_loadbalancer_3_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_client_3_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_3_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/GatewayserverApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/SportOrganizationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/SportOrganizationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContextFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContextFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +122,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -98,10 +180,11 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sport-organization-service" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15429688" />
@@ -112,19 +195,22 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ca.nomosnow.sport_event_service.controller" />
-      <recent name="ca.nomosnow.sportorganizationservice.config" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sport-organization-service" />
+      <recent name="$PROJECT_DIR$/gateway-server" />
       <recent name="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice" />
       <recent name="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/model" />
       <recent name="$PROJECT_DIR$/eureka-server" />
-      <recent name="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service" />
-      <recent name="$PROJECT_DIR$/sport_event_service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ca.nomosnow.gatewayserver.filters" />
+      <recent name="ca.nomosnow.sportorganizationservice.utils" />
+      <recent name="ca.nomosnow.sport_event_service.utils" />
+      <recent name="ca.nomosnow.sport_event_service.controller" />
+      <recent name="ca.nomosnow.sportorganizationservice.config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -134,7 +220,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SportEventServiceApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -151,6 +237,8 @@
     <configuration name="ConfigserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.configserver.ConfigserverApplication" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,6 +246,8 @@
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.eurekaserver.EurekaServerApplication" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,6 +255,8 @@
     <configuration name="GatewayserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gateway-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.gatewayserver.GatewayserverApplication" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,6 +264,8 @@
     <configuration name="SportEventServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sport_event_service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.sport_event_service.SportEventServiceApplication" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,6 +282,8 @@
     <configuration name="SportOrganizationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sport-organization-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.sportorganizationservice.SportOrganizationServiceApplication" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -229,7 +325,7 @@
       <workItem from="1632427154982" duration="926000" />
       <workItem from="1632428102061" duration="98000" />
       <workItem from="1632428224361" duration="4914000" />
-      <workItem from="1632438895916" duration="13301000" />
+      <workItem from="1632438895916" duration="21614000" />
     </task>
     <servers />
   </component>
@@ -262,54 +358,54 @@
     </state>
     <state x="208" y="0" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1632429425536" />
     <state x="208" y="25" key="#Project_Structure/0.25.1440.815@0.25.1440.815" timestamp="1631741693070" />
-    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632428476553">
+    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632506620967">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1632428476553" />
-    <state x="621" y="213" key="#com.intellij.ide.util.MemberChooser" timestamp="1632339098613">
+    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1632506620967" />
+    <state x="621" y="213" key="#com.intellij.ide.util.MemberChooser" timestamp="1632519659983">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="621" y="213" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1632339098613" />
-    <state width="1024" height="331" key="GridCell.Tab.0.bottom" timestamp="1632504839759">
+    <state x="621" y="213" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1632519659983" />
+    <state width="1024" height="331" key="GridCell.Tab.0.bottom" timestamp="1632527244333">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1632504839759" />
-    <state width="1024" height="331" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1632443769151" />
-    <state width="1024" height="331" key="GridCell.Tab.0.center" timestamp="1632504839756">
+    <state width="1024" height="331" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1632527244333" />
+    <state width="1024" height="331" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1632527147323" />
+    <state width="1024" height="331" key="GridCell.Tab.0.center" timestamp="1632527244331">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1632504839756" />
-    <state width="1024" height="331" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1632443769149" />
-    <state width="1024" height="331" key="GridCell.Tab.0.left" timestamp="1632504839755">
+    <state width="1024" height="331" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1632527244331" />
+    <state width="1024" height="331" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1632527147321" />
+    <state width="1024" height="331" key="GridCell.Tab.0.left" timestamp="1632527244331">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1632504839755" />
-    <state width="1024" height="331" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1632443769147" />
-    <state width="1024" height="331" key="GridCell.Tab.0.right" timestamp="1632504839757">
+    <state width="1024" height="331" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1632527244331" />
+    <state width="1024" height="331" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1632527147320" />
+    <state width="1024" height="331" key="GridCell.Tab.0.right" timestamp="1632527244332">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1632504839757" />
-    <state width="1024" height="331" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1632443769150" />
-    <state width="1024" height="331" key="GridCell.Tab.1.bottom" timestamp="1632504839764">
+    <state width="1024" height="331" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1632527244332" />
+    <state width="1024" height="331" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1632527147322" />
+    <state width="1024" height="331" key="GridCell.Tab.1.bottom" timestamp="1632527244335">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1632504839764" />
-    <state width="1024" height="331" key="GridCell.Tab.1.bottom/0.25.1440.815@0.25.1440.815" timestamp="1632443769157" />
-    <state width="1024" height="331" key="GridCell.Tab.1.center" timestamp="1632504839761">
+    <state width="1024" height="331" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1632527244335" />
+    <state width="1024" height="331" key="GridCell.Tab.1.bottom/0.25.1440.815@0.25.1440.815" timestamp="1632527147328" />
+    <state width="1024" height="331" key="GridCell.Tab.1.center" timestamp="1632527244334">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1632504839761" />
-    <state width="1024" height="331" key="GridCell.Tab.1.center/0.25.1440.815@0.25.1440.815" timestamp="1632443769155" />
-    <state width="1024" height="331" key="GridCell.Tab.1.left" timestamp="1632504839760">
+    <state width="1024" height="331" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1632527244334" />
+    <state width="1024" height="331" key="GridCell.Tab.1.center/0.25.1440.815@0.25.1440.815" timestamp="1632527147326" />
+    <state width="1024" height="331" key="GridCell.Tab.1.left" timestamp="1632527244334">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1632504839760" />
-    <state width="1024" height="331" key="GridCell.Tab.1.left/0.25.1440.815@0.25.1440.815" timestamp="1632443769153" />
-    <state width="1024" height="331" key="GridCell.Tab.1.right" timestamp="1632504839762">
+    <state width="1024" height="331" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1632527244334" />
+    <state width="1024" height="331" key="GridCell.Tab.1.left/0.25.1440.815@0.25.1440.815" timestamp="1632527147324" />
+    <state width="1024" height="331" key="GridCell.Tab.1.right" timestamp="1632527244335">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="331" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1632504839762" />
-    <state width="1024" height="331" key="GridCell.Tab.1.right/0.25.1440.815@0.25.1440.815" timestamp="1632443769156" />
+    <state width="1024" height="331" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1632527244335" />
+    <state width="1024" height="331" key="GridCell.Tab.1.right/0.25.1440.815@0.25.1440.815" timestamp="1632527147327" />
     <state width="1024" height="331" key="GridCell.Tab.2.bottom" timestamp="1632504839658">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -346,10 +442,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="424" y="156" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1632442397770" />
-    <state x="229" y="25" width="1024" height="815" key="SettingsEditor" timestamp="1632438873614">
+    <state x="229" y="25" width="1024" height="815" key="SettingsEditor" timestamp="1632506587721">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="25" width="1024" height="815" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1632438873614" />
+    <state x="229" y="25" width="1024" height="815" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1632506587721" />
     <state width="720" height="450" key="XDebugger.FullValuePopup" timestamp="1632442827953">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
