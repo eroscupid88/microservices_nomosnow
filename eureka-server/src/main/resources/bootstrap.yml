@@ -3,4 +3,8 @@ spring:
     name: eureka-server
   cloud:
     config:
+      fail-fast: true
+      retry:
+        maxAttempts: 200
+        maxInterval: 10000
       uri: http://localhost:7071

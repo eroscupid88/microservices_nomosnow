@@ -19,6 +19,7 @@ public class Controller {
 
     @RequestMapping(value = "/{sportOrganizationId}", method = RequestMethod.GET)
     private ResponseEntity<SportOrganization> getSportOrganization(@PathVariable String sportOrganizationId) {
+        System.out.println("done done");
         return ResponseEntity.ok(sportOrganizationService.getSportOrganization(sportOrganizationId));
     }
     @PutMapping()

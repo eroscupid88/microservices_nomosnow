@@ -1,0 +1,18 @@
+server:
+  port: 7071
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+      - native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+#          using github
+#        git:
+#          default-label: main
+#          uri: https://github.com/eroscupid88/nomosnow-config-repository
+#          searchPaths: gateway-server*,sport-event-configuration*,eureka-server*,sport-organization-configuration*

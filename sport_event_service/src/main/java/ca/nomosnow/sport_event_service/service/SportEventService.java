@@ -141,7 +141,6 @@ public class SportEventService {
 
     @CircuitBreaker(name="sportEventService",
                     fallbackMethod = "fallbackMethodForCircuitBreaker")
-
     @RateLimiter(name ="sportEventService",
             fallbackMethod = "fallbackMethodForCircuitBreaker")
     @Retry(name="retrySportEventService",

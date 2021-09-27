@@ -23,7 +23,8 @@ public class SportOrganizationService {
      * @return one or null if not found
      */
     public SportOrganization getSportOrganization(String sportOrganizationId) {
-        return sportOrganizationRepository.findSportOrganizationById(sportOrganizationId);
+         SportOrganization sportOrganization = sportOrganizationRepository.findSportOrganizationById(sportOrganizationId);
+        return sportOrganization.withComment(configService.getProperty());
     }
 
     /**

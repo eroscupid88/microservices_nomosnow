@@ -1,0 +1,15 @@
+ services:
+  configserver:
+
+
+
+  keycloak:
+    image: jboss/keycloak:latest
+    restart: always
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - "8080:8080"
+
+
