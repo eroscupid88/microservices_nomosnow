@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  configserver:
+    image: configserver:latest
+    ports:
+      - '7072:7072'
+    networks:
+      backend:
+        aliases:
+          - "configserver"
+  eurekaserver:
+    image: eurekaserver:latest
+    ports:
+      - '7070:7070'
+    networks:
+      backend:
+        aliases:
+          - "eurekaserver"
+networks:
+  backend:
+    driver: bridge
