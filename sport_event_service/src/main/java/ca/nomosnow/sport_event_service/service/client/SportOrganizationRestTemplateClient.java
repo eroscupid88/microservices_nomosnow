@@ -1,6 +1,7 @@
 package ca.nomosnow.sport_event_service.service.client;
 
 import ca.nomosnow.sport_event_service.model.SportOrganization;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +13,12 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class SportOrganizationRestTemplateClient {
     @Autowired
-    RestTemplate restTemplate;
+    KeycloakRestTemplate restTemplate;
 
     public SportOrganization getSportOrganization(String organizationId){
         ResponseEntity<SportOrganization> restExchange =
                 restTemplate.exchange(
-                        "http://sport-organization-service/v1/sportOrganization/{organizationId}",
+                        "http://localhost:7072/organization/v1/sportOrganization/{organizationId}",
                         HttpMethod.GET,
                         null, SportOrganization.class, organizationId);
 

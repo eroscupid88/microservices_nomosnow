@@ -142,17 +142,17 @@ public class SportEventService {
     @CircuitBreaker(name="sportEventService",
                     fallbackMethod = "fallbackMethodForCircuitBreaker")
 
-    @RateLimiter(name ="sportEventService",
-            fallbackMethod = "fallbackMethodForCircuitBreaker")
-    @Retry(name="retrySportEventService",
-            fallbackMethod= "fallbackMethodForCircuitBreaker")
-    @Bulkhead(name = "bulkheadSportEventService",
-            //                 type default  of bulkhead is semaphore//
-            type= Bulkhead.Type.THREADPOOL,
-            fallbackMethod="fallbackMethodForCircuitBreaker")
+//    @RateLimiter(name ="sportEventService",
+//            fallbackMethod = "fallbackMethodForCircuitBreaker")
+//    @Retry(name="retrySportEventService",
+//            fallbackMethod= "fallbackMethodForCircuitBreaker")
+//    @Bulkhead(name = "bulkheadSportEventService",
+//            //                 type default  of bulkhead is semaphore//
+//            type= Bulkhead.Type.THREADPOOL,
+//            fallbackMethod="fallbackMethodForCircuitBreaker")
     public List<SportEvent> getSportEventsByOrganizationId(String organizationId) throws TimeoutException {
         logger.debug("Get List of SportEvents by Organization with Correlation Id: {}", UserContextHolder.getContext().getCorrelationId());
-        randomlyRunLong();
+//        randomlyRunLong();
         return sportEventRepository.findByOrganizationId(organizationId);
     }
 

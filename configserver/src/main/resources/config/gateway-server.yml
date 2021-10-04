@@ -15,12 +15,14 @@ spring:
             - Path=/organization/**
           filters:
             - RewritePath=/organization/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
         - id: sport-event-service
           uri: lb://SPORT-EVENT-SERVICE
           predicates:
             - Path=/event/**
           filters:
             - RewritePath=/event/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
       # use service discovery as route
     loadbalancer.ribbon.enabled: false
 

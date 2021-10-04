@@ -42,6 +42,8 @@ public class SportEventController {
                                                     @PathVariable("sportEventId") String id,
                                                     @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
         SportEvent sportEvent = sportEventService.getSportEvent(organizationId, id, locale);
+        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+
         return Optional.ofNullable(sportEvent)
                 .map(user -> ResponseEntity.ok().body(user
                         .add(linkTo(methodOn(SportEventController.class)
@@ -57,12 +59,26 @@ public class SportEventController {
     }
 
     @RequestMapping(value = "/{sportEventId}/{clientType}", method = RequestMethod.GET)
-    public SportEvent getSportEventWithClient(@PathVariable("sportEventId") String sportEventId,
+    public ResponseEntity<SportEvent>  getSportEventWithClient(@PathVariable("sportEventId") String sportEventId,
                                               @PathVariable("sportOrganizationId") String organizationId,
                                               @RequestHeader(value = "Accept-Language", required = false) Locale locale,
                                               @PathVariable("clientType") String clientType) {
 
-        return sportEventService.getSportEventWithClient(sportEventId, organizationId, locale, clientType);
+        SportEvent sportEvent = sportEventService.getSportEventWithClient(sportEventId, organizationId, locale, clientType);
+        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+
+        return Optional.ofNullable(sportEvent)
+                .map(user -> ResponseEntity.ok().body(user
+                        .add(linkTo(methodOn(SportEventController.class)
+                                        .getSportEventWithClient(sportEventId,organizationId,locale,clientType))
+                                        .withSelfRel(),
+                                linkTo(methodOn(SportEventController.class)
+                                        .createSportEvent(sportEvent, locale))
+                                        .withRel("createSportEvent"),
+                                linkTo(methodOn(SportEventController.class)
+                                        .updateSportEvent(sportEvent, locale))
+                                        .withRel("updateSportEvent"))))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     //Post method
@@ -77,6 +93,8 @@ public class SportEventController {
     public ResponseEntity<SportEvent> createSportEvent(
             @RequestBody SportEvent sportEvent,
             @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
+        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+
         return ResponseEntity.ok(sportEventService.createSportEvent(sportEvent, locale));
     }
 
@@ -90,6 +108,8 @@ public class SportEventController {
     public ResponseEntity<SportEvent> updateSportEvent(
             @RequestBody SportEvent sportEvent,
             @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
+        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+
         return ResponseEntity.ok(sportEventService.updateSportEvent(sportEvent, locale));
     }
 
