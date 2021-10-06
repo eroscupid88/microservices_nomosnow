@@ -3,7 +3,7 @@ spring:
     name: gateway-server
   cloud:
     config:
-      uri: ${CONFIG_URI:http://localhost:7071}
+      uri: http://configserver:7071
       failFast: true
       retry:
         initialInterval: 3000

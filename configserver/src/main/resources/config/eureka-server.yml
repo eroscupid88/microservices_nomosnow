@@ -5,12 +5,12 @@ spring:
 eureka:
   renewalPercentThreshold: 0.85
   instance:
-    hostname: eureka-server
+    hostname: eurekaserver
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 5
 server:

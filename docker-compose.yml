@@ -3,6 +3,54 @@ version: '3.9'
 
 services:
 
+
+
+  configserver:
+    image: configserver:latest
+    container_name: configServer
+    ports:
+      - "7071:7071"
+    networks:
+      backend:
+        aliases:
+          - "configserver"
+  eurekaserver:
+    image: eurekaserver:latest
+    container_name: eurekaServer
+    ports:
+      - "7070:7070"
+    depends_on:
+#      database:
+#        condition: service_healthy
+      configserver:
+        condition: service_started
+    networks:
+      backend:
+        aliases:
+          - "eurekaserver"
+  gatewayserver:
+    image: gatewayserver:latest
+    container_name: gateway
+    ports:
+      - "7072:7072"
+    environment:
+      PROFILE: "dev"
+      SERVER_PORT: "7072"
+      CONFIGSERVER_URI: "http://configserver:7071"
+      EUREKASERVER_URI: "http://eurekaserver:7070/eureka/"
+      EUREKASERVER_PORT: "7070"
+      CONFIGSERVER_PORT: "7071"
+    depends_on:
+      #        database:
+      #          condition: service_healthy
+      configserver:
+        condition: service_started
+      eurekaserver:
+        condition: service_started
+    networks:
+      backend:
+        aliases:
+          - "gateway"
   keycloak:
     image: jboss/keycloak
     restart: always

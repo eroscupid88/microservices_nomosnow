@@ -1,10 +1,10 @@
-package ca.nomosnow.gatewayserver;
+package ca.nomosnow.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GatewayserverApplicationTests {
+class ConfigServerApplicationTests {
 
     @Test
     void contextLoads() {
