@@ -14,7 +14,7 @@
     <modules>
 <!--        <module>sport_event_service</module>-->
         <module>eureka-server</module>
-<!--        <module>sport-organization-service</module>-->
+        <module>sport-organization-service</module>
         <module>configserver</module>
         <module>gateway-server</module>
     </modules>

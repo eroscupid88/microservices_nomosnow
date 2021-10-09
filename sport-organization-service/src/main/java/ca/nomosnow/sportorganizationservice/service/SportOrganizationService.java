@@ -32,8 +32,11 @@ public class SportOrganizationService {
      * @return SportOrganization
      */
     public SportOrganization createSportOrganization(SportOrganization sportOrganization) {
+        System.out.println("something wrong 1");
         sportOrganization.setId(UUID.randomUUID().toString());
+        System.out.println("something wrong 2");
         sportOrganizationRepository.save(sportOrganization);
+        System.out.println("something wrong 3");
         return sportOrganization.withComment(configService.getProperty());
     }
 

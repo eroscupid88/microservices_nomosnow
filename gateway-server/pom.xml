@@ -11,9 +11,9 @@
 
 
     <groupId>ca.nomosnow</groupId>
-    <artifactId>gatewayserver</artifactId>
+    <artifactId>gateway-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gatewayserver</name>
+    <name>gateway-server</name>
     <description>gate way API for nomosnow project</description>
     <properties>
         <java.version>11</java.version>

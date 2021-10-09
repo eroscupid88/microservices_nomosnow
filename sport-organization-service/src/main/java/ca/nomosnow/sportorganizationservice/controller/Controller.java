@@ -20,13 +20,14 @@ public class Controller {
     @Autowired
     private SportOrganizationService sportOrganizationService;
 
+//    @RolesAllowed({"ADMIN","USER"})
     @RequestMapping(value = "/{sportOrganizationId}", method = RequestMethod.GET)
     private ResponseEntity<SportOrganization> getSportOrganization(@PathVariable String sportOrganizationId) {
         logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
 
         return ResponseEntity.ok(sportOrganizationService.getSportOrganization(sportOrganizationId));
     }
-    @RolesAllowed("ADMIN")
+//    @RolesAllowed({"ADMIN","USER"})
     @PutMapping()
     private ResponseEntity<SportOrganization> updateSportOrganization(
             @RequestBody SportOrganization sportOrganization) {
@@ -34,6 +35,7 @@ public class Controller {
 
         return ResponseEntity.ok(sportOrganizationService.updateSportOrganization(sportOrganization));
     }
+//    @RolesAllowed({"ADMIN","USER"})
     @PostMapping()
     private ResponseEntity<SportOrganization> createSportOrganization(
             @RequestBody SportOrganization sportOrganization) {

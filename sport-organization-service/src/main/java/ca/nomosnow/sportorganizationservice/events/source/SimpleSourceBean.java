@@ -11,13 +11,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SimpleSourceBean {
-    private Source source;
+
 
     private static final Logger logger = LoggerFactory.getLogger(SimpleSourceBean.class);
 
     @Autowired
-    public SimpleSourceBean(Source source){
-        this.source = source;
+    public SimpleSourceBean(){
     }
 
     public void publishOrganizationChange(String action, String organizationId){
@@ -28,6 +27,6 @@ public class SimpleSourceBean {
                 organizationId,
                 UserContext.getCorrelationId());
 
-        source.output().send(MessageBuilder.withPayload(change).build());
+
     }
 }
