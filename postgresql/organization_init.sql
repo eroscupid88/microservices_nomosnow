@@ -1,5 +1,5 @@
-SELECT 'CREATE DATABASE sporteventorganization'
-WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'sporteventorganization' )\gexec
+SELECT 'CREATE DATABASE nomosnow_organization_service'
+WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'nomosnow_organization_service' )\gexec
 CREATE TABLE IF NOT EXISTS public.sporteventorganizations
 (
     organization_id text COLLATE pg_catalog."default" NOT NULL,

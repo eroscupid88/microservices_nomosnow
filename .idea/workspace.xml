@@ -23,12 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/postgresql/sportevent_data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgresql/sportevent_init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap-native.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap-native.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-script/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-script/add_default_user.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-script/common.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-script/docker-entrypoint.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport-organization-service/src/main/resources/bootstrap-native.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport_event_service/src/main/resources/bootstrap-native.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/data1.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/init1.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_keycloak/realm-export.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_keycloak/nomosnow-realm-export.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgresql/organization_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/organization_init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgresql/sportevent_data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/sportevent_data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgresql/sportevent_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/sportevent_init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/test/java/ca/nomosnow/sport_event_service/SportEventServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/test/java/ca/nomosnow/sport_event_service/SportEventServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,10 +126,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/mysql_keycloak" />
       <recent name="$PROJECT_DIR$/mysql_keycloak/realm-export" />
       <recent name="$PROJECT_DIR$/realm-export" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/postgresql" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -144,19 +155,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml.organization_database: Compose Deployment">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ConfigserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.configserver.ConfigServerApplication" />
@@ -210,19 +208,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="docker-compose.yml.configserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="configserver" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <configuration name="docker-compose.yml.keycloak: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -262,12 +247,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.sportorganizationservice: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.sportevent_database: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="sportorganizationservice" />
+              <option value="sportevent_database" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -275,25 +260,34 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="keycloak-script/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="keycloak-script/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
+      <item itemvalue="Docker.keycloak-script/Dockerfile" />
+      <item itemvalue="Docker.docker-compose.yml.mysql-keycloak: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.sportevent_database: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.SportEventServiceApplication" />
       <item itemvalue="Spring Boot.SportOrganizationServiceApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
-      <item itemvalue="Docker.docker-compose.yml.mysql-keycloak: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.configserver: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.sportorganizationservice: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.sportorganizationservice: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.sportevent_database: Compose Deployment" />
+        <item itemvalue="Docker.keycloak-script/Dockerfile" />
         <item itemvalue="Docker.docker-compose.yml.mysql-keycloak: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.configserver: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +324,10 @@
       <workItem from="1633363505213" duration="1800000" />
       <workItem from="1633378711234" duration="266000" />
       <workItem from="1633379475951" duration="4218000" />
-      <workItem from="1633651890668" duration="42680000" />
+      <workItem from="1633651890668" duration="59414000" />
+      <workItem from="1633824373820" duration="5163000" />
+      <workItem from="1633830423001" duration="4040000" />
+      <workItem from="1633886956368" duration="599000" />
     </task>
     <servers />
   </component>
@@ -375,9 +372,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="621" y="213" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1632519659983" />
-    <state x="408" y="172" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1633378720393">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state x="408" y="162" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1633886779571">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="408" y="162" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1633886779571" />
     <state x="408" y="172" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1440.815@0.25.1440.815" timestamp="1633378720393" />
     <state x="449" y="198" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1633482493113">
       <screen x="0" y="0" width="1440" height="900" />
@@ -491,10 +489,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="355" y="25" width="729" height="815" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1632776133964" />
-    <state x="385" y="217" width="670" height="676" key="search.everywhere.popup" timestamp="1632441366285">
+    <state x="385" y="217" width="670" height="676" key="search.everywhere.popup" timestamp="1633884818563">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="217" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1632441366285" />
+    <state x="385" y="217" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1633884818563" />
     <state x="450" y="366" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1632429148836">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
