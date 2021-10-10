@@ -20,11 +20,6 @@ public class UserContext {
     public static final String USER_ID        = "tmx-user-id";
     public static final String ORGANIZATION_ID = "tmx-organization-id";
 
-//    private String correlationId= new String();
-//    private String authToken= new String();
-//    private String userId = new String();
-//    private String organizationId = new String();
-
     private static final ThreadLocal<String> correlationId =
             new ThreadLocal<String>();
     private static final ThreadLocal<String> authToken =

@@ -1,8 +1,8 @@
 package ca.nomosnow.sportorganizationservice.controller;
 
 import ca.nomosnow.sportorganizationservice.model.SportOrganization;
-import ca.nomosnow.sportorganizationservice.repository.SportOrganizationRepository;
 import ca.nomosnow.sportorganizationservice.service.SportOrganizationService;
+import ca.nomosnow.sportorganizationservice.utils.UserContext;
 import ca.nomosnow.sportorganizationservice.utils.UserContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +31,8 @@ public class Controller {
     @PutMapping()
     private ResponseEntity<SportOrganization> updateSportOrganization(
             @RequestBody SportOrganization sportOrganization) {
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        UserContextHolder.getContext();
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
 
         return ResponseEntity.ok(sportOrganizationService.updateSportOrganization(sportOrganization));
     }
@@ -40,7 +41,8 @@ public class Controller {
     private ResponseEntity<SportOrganization> createSportOrganization(
             @RequestBody SportOrganization sportOrganization) {
 
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        UserContextHolder.getContext();
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
         return ResponseEntity.ok(sportOrganizationService.createSportOrganization(sportOrganization));
     }
 }

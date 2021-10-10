@@ -3,6 +3,7 @@ package ca.nomosnow.sport_event_service.controller;
 
 import ca.nomosnow.sport_event_service.model.SportEvent;
 import ca.nomosnow.sport_event_service.service.SportEventService;
+import ca.nomosnow.sport_event_service.utils.UserContext;
 import ca.nomosnow.sport_event_service.utils.UserContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +43,7 @@ public class SportEventController {
                                                     @PathVariable("sportEventId") String id,
                                                     @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
         SportEvent sportEvent = sportEventService.getSportEvent(organizationId, id, locale);
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
 
         return Optional.ofNullable(sportEvent)
                 .map(user -> ResponseEntity.ok().body(user
@@ -65,7 +66,7 @@ public class SportEventController {
                                               @PathVariable("clientType") String clientType) {
 
         SportEvent sportEvent = sportEventService.getSportEventWithClient(sportEventId, organizationId, locale, clientType);
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
 
         return Optional.ofNullable(sportEvent)
                 .map(user -> ResponseEntity.ok().body(user
@@ -93,7 +94,7 @@ public class SportEventController {
     public ResponseEntity<SportEvent> createSportEvent(
             @RequestBody SportEvent sportEvent,
             @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
 
         return ResponseEntity.ok(sportEventService.createSportEvent(sportEvent, locale));
     }
@@ -108,14 +109,15 @@ public class SportEventController {
     public ResponseEntity<SportEvent> updateSportEvent(
             @RequestBody SportEvent sportEvent,
             @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
 
         return ResponseEntity.ok(sportEventService.updateSportEvent(sportEvent, locale));
     }
 
     @RequestMapping(value = "/all",method = RequestMethod.GET)
     public List<SportEvent> getAllSportEvents(@PathVariable("sportOrganizationId") String sportOrganizationId) throws TimeoutException {
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        UserContextHolder.getContext();
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
         return sportEventService.getSportEventsByOrganizationId(sportOrganizationId);
     }
     /**

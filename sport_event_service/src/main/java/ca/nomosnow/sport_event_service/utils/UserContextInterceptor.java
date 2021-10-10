@@ -10,11 +10,16 @@ import org.springframework.http.client.ClientHttpResponse;
 
 import java.io.IOException;
 
+
+// this class make sure correlation_id is inject into any HTTP base service requests
+// that are executed from Rest Template
 public class UserContextInterceptor implements ClientHttpRequestInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(UserContextInterceptor.class);
     @Override
     public ClientHttpResponse intercept(
-            HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
+            HttpRequest request,
+            byte[] body,
+            ClientHttpRequestExecution execution)
             throws IOException {
 
         HttpHeaders headers = request.getHeaders();

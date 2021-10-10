@@ -1,5 +1,6 @@
 package ca.nomosnow.sport_event_service.model;
 import lombok.*;
+import org.springframework.data.redis.core.RedisHash;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;

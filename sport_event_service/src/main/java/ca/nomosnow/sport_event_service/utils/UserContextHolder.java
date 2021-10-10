@@ -27,7 +27,7 @@ public class UserContextHolder {
      * Static Method setContext available within service to set context into Thread local storage
      * @param context context
      */
-    public static final void setContext(UserContext context) {
+    public static void setContext(UserContext context) {
         Assert.notNull(context, "Only non-null UserContext instances are permitted");
         userContext.set(context);
     }
