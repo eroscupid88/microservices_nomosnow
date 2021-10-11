@@ -130,7 +130,7 @@ services:
     networks:
       backend:
         aliases:
-          - "gateway"
+          - "gatewayserver"
 #  keycloak:
 #    build: ./keycloak-script
 #    image: jboss/keycloak

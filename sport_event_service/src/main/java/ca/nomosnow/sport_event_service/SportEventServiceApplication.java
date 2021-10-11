@@ -12,6 +12,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -72,7 +73,6 @@ public class SportEventServiceApplication {
         String hostname = configService.getRedisServer();
         int port = Integer.parseInt(configService.getRedisPort());
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(hostname, port);
-        //redisStandaloneConfiguration.setPassword(RedisPassword.of("yourRedisPasswordIfAny"));
         return new JedisConnectionFactory(redisStandaloneConfiguration);
     }
 
@@ -86,7 +86,8 @@ public class SportEventServiceApplication {
      * Loadbalancer
      * @return restTemplate
      */
-    @LoadBalanced
+    @Primary
+//    @LoadBalanced
     @Bean
     RestTemplate getRestTemplate() {
         RestTemplate template = new RestTemplate();

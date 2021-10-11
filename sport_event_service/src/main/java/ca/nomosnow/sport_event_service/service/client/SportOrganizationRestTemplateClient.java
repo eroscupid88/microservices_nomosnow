@@ -35,7 +35,7 @@ public class SportOrganizationRestTemplateClient {
         logger.debug("Unable to locate organization from the redis cache: {}.",organizationId);
         ResponseEntity<SportOrganization> restExchange =
                 restTemplate.exchange(
-                        "http://gateway:7072/organization/v1/sportOrganization/{organizationId}",
+                        "http://gatewayserver:7072/organization/v1/sportOrganization/{organizationId}",
                         HttpMethod.GET,
                         null, SportOrganization.class, organizationId);
         sportOrganization = restExchange.getBody();
