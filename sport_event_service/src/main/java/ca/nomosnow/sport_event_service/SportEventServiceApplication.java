@@ -6,6 +6,7 @@ import ca.nomosnow.sport_event_service.utils.UserContextInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -14,9 +15,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
@@ -33,6 +36,8 @@ import java.util.Locale;
 @EnableFeignClients
 @EnableDiscoveryClient
 @RefreshScope
+@EnableRedisRepositories
+//@EnableCaching
 public class SportEventServiceApplication {
 
     public static void main(String[] args) {
@@ -76,10 +81,17 @@ public class SportEventServiceApplication {
         return new JedisConnectionFactory(redisStandaloneConfiguration);
     }
 
-    RedisTemplate<String, Object> redisTemplate() {
+    RedisTemplate<?, ?> redisTemplate() {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(jedisConnectionFactory());
         return template;
+    }
+
+    @Bean
+    public RedisCacheManager cacheManager() {
+        RedisCacheManager rcm = RedisCacheManager.create(jedisConnectionFactory());
+        rcm.setTransactionAware(true);
+        return rcm;
     }
 
     /**

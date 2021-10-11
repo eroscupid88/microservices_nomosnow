@@ -8,6 +8,8 @@ import ca.nomosnow.sport_event_service.utils.UserContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,7 +43,9 @@ public class SportEventController {
     @GetMapping(value = "/{sportEventId}")
     public ResponseEntity<SportEvent> getSportEvent(@PathVariable("sportOrganizationId") String organizationId,
                                                     @PathVariable("sportEventId") String id,
+
                                                     @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
+
         SportEvent sportEvent = sportEventService.getSportEvent(organizationId, id, locale);
         logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
 
@@ -58,6 +62,8 @@ public class SportEventController {
                                         .withRel("updateSportEvent"))))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
 
     @RequestMapping(value = "/{sportEventId}/{clientType}", method = RequestMethod.GET)
     public ResponseEntity<SportEvent>  getSportEventWithClient(@PathVariable("sportEventId") String sportEventId,

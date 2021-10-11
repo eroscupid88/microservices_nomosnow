@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Getter @Setter @ToString
 @Entity
 @Table(name = "sportevents")
+//@RedisHash("sportevents")
 public class SportEvent extends RepresentationModel<SportEvent> {
     @Id
     @Column(name = "sportevent_id",nullable = false)

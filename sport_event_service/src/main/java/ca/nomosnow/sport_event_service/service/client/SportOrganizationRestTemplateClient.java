@@ -1,6 +1,7 @@
 package ca.nomosnow.sport_event_service.service.client;
 
 import ca.nomosnow.sport_event_service.model.SportOrganization;
+import ca.nomosnow.sport_event_service.redisCache.RedisCacheSupport;
 import ca.nomosnow.sport_event_service.repository.OrganizationRedisRepository;
 import ca.nomosnow.sport_event_service.utils.UserContext;
 //import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
@@ -21,18 +22,18 @@ public class SportOrganizationRestTemplateClient {
     @Autowired
     RestTemplate restTemplate;
     @Autowired
-    OrganizationRedisRepository redisRepository;
+    RedisCacheSupport redis;
     private static final Logger logger = LoggerFactory.getLogger(SportOrganizationRestTemplateClient.class);
 
     public SportOrganization getSportOrganization(String organizationId){
         logger.debug("in Sport-event-service.getOrganization: {}", UserContext.getCorrelationId());
 
-        SportOrganization sportOrganization = checkRedisCache(organizationId);
+        SportOrganization sportOrganization = redis.OrganizationCheckRedisCache(organizationId);
         if (sportOrganization != null) {
-            logger.debug("I have successfully retrieved an organization {} from the redis cache: {}", organizationId, sportOrganization);
+            logger.debug("From SportOrganization rest template : successfully retrieved an organization {} from the redis cache: {}", organizationId, sportOrganization);
             return sportOrganization;
         }
-        logger.debug("Unable to locate organization from the redis cache: {}.",organizationId);
+        logger.debug("From SportOrganization rest template : Unable to locate organization from the redis cache: {}.",organizationId);
         ResponseEntity<SportOrganization> restExchange =
                 restTemplate.exchange(
                         "http://gatewayserver:7072/organization/v1/sportOrganization/{organizationId}",
@@ -40,40 +41,13 @@ public class SportOrganizationRestTemplateClient {
                         null, SportOrganization.class, organizationId);
         sportOrganization = restExchange.getBody();
         if (sportOrganization != null) {
-            cacheOrganizationObject(sportOrganization);
+            redis.cacheOrganizationObject(sportOrganization);
         }
         return restExchange.getBody();
     }
 
 
-    /**
-     * Method checkRedisCache to check and return SportOrganization. return null if there is none
-     * @param sportOrganizationId sport organization id
-     * @return SportOrganization if found, null otherwise
-     */
-    private SportOrganization checkRedisCache(String sportOrganizationId) {
-        try {
-            return redisRepository
-                    .findById(sportOrganizationId)
-                    .orElse(null);
-        }catch (Exception ex){
-            logger.error("Error encountered while trying to retrieve organization{} check Redis Cache.  Exception {}",
-                    sportOrganizationId, ex);
-            return null;
-        }
-    }
-    /**
-     * cacheOrganizationObject method save SportOrganization Object into cache if there is any change
-     * @param sportOrganization SportOrganization object
-     */
-    private void cacheOrganizationObject(SportOrganization sportOrganization) {
-        try {
-            redisRepository.save(sportOrganization);
-        }catch (Exception ex){
-            logger.error("Unable to cache organization {} in Redis. Exception {}",
-                    sportOrganization.getId(), ex);
-        }
-    }
+
 
 }
 

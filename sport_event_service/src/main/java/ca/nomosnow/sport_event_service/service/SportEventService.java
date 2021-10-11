@@ -3,6 +3,7 @@ package ca.nomosnow.sport_event_service.service;
 import ca.nomosnow.sport_event_service.config.ConfigService;
 import ca.nomosnow.sport_event_service.model.SportEvent;
 import ca.nomosnow.sport_event_service.model.SportOrganization;
+import ca.nomosnow.sport_event_service.redisCache.RedisCacheSupport;
 import ca.nomosnow.sport_event_service.repository.SportEventRepository;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationDiscoveryClient;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationFeignClient;
@@ -21,6 +22,7 @@ import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.MessageSource;
@@ -50,6 +52,7 @@ public class SportEventService {
     @Autowired
     SportOrganizationRestTemplateClient sportOrganizationRestTemplateClient;
 
+
     /**
      *
      * Method find SportEvent by Id and organization id
@@ -57,12 +60,15 @@ public class SportEventService {
      * @param sportEventId String
      * @return SportEvent Object
      */
+
     public SportEvent getSportEvent(String organizationId, String sportEventId, Locale locale ) {
         SportEvent sportEvent = sportEventRepository.findByOrganizationIdAndSportEventId(organizationId, sportEventId);
         if (sportEvent == null) {
+            System.out.printf(messageSource.getMessage("sportEvent.search.error.message", null, locale), sportEventId, organizationId);
             throw new IllegalArgumentException(String.format(messageSource.getMessage("sportEvent.search.error.message",null,locale),sportEventId,organizationId));
         }
-        System.out.print(String.format(messageSource.getMessage("sportEvent.get.message",null,locale),sportEvent.toString()));
+        System.out.printf(messageSource.getMessage("sportEvent.get.message",null,locale),sportEvent.toString());
+
         return sportEvent.withComment(configService.getProperty());
     }
 
@@ -74,7 +80,7 @@ public class SportEventService {
     public SportEvent createSportEvent(SportEvent sportEvent,Locale locale) {
         sportEvent.setSportEventId(UUID.randomUUID().toString());
         sportEventRepository.save(sportEvent);
-        System.out.print(String.format(messageSource.getMessage("sportEvent.create.message",null,locale),sportEvent.toString()));
+        System.out.printf(messageSource.getMessage("sportEvent.create.message",null,locale),sportEvent.toString());
         return sportEvent.withComment(configService.getProperty());
     }
 
@@ -85,7 +91,7 @@ public class SportEventService {
      */
     public SportEvent updateSportEvent(SportEvent sportEvent,Locale locale){
         sportEventRepository.save(sportEvent);
-        System.out.print(String.format(messageSource.getMessage("sportEvent.update.message",null,locale),sportEvent.toString()));
+        System.out.printf(messageSource.getMessage("sportEvent.update.message",null,locale),sportEvent.toString());
         return sportEvent.withComment(configService.getProperty());
     }
     /**
