@@ -17,13 +17,14 @@ import javax.annotation.security.RolesAllowed;
 @RequestMapping(value = "/v1/sportOrganization")
 public class Controller {
     static final Logger logger = LoggerFactory.getLogger(Controller.class);
+
     @Autowired
     private SportOrganizationService sportOrganizationService;
 
 //    @RolesAllowed({"ADMIN","USER"})
     @RequestMapping(value = "/{sportOrganizationId}", method = RequestMethod.GET)
     private ResponseEntity<SportOrganization> getSportOrganization(@PathVariable String sportOrganizationId) {
-        logger.debug("Sport Controller Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        logger.debug("Sport Controller Correlation id: {}", UserContext.getCorrelationId());
 
         return ResponseEntity.ok(sportOrganizationService.getSportOrganization(sportOrganizationId));
     }

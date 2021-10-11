@@ -71,10 +71,7 @@
             <artifactId>spring-retry</artifactId>
             <!--            <version>1.3.1</version>-->
         </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework</groupId>-->
@@ -159,11 +156,7 @@
             <version>${resilience4j.version}</version>
         </dependency>
         <!--        another dependency                   -->
-        <!--        dependency to create getter and setter-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/io.github.cdimascio/java-dotenv -->
         <!--  dependency for using .env configuration variable      -->
@@ -178,6 +171,19 @@
             <version>3.0.3</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.3</version>
+        </dependency>
+
+
+<!--redis dependencies-->
+        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
         </dependency>
@@ -186,6 +192,16 @@
             <artifactId>jedis</artifactId>
             <type>jar</type>
         </dependency>
+        <!--        dependency to create getter and setter-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
 
     </dependencies>
     <dependencyManagement>

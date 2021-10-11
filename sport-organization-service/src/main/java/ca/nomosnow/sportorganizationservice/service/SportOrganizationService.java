@@ -1,8 +1,11 @@
 package ca.nomosnow.sportorganizationservice.service;
 
+import ca.nomosnow.sportorganizationservice.SportOrganizationServiceApplication;
 import ca.nomosnow.sportorganizationservice.config.ConfigService;
 import ca.nomosnow.sportorganizationservice.model.SportOrganization;
 import ca.nomosnow.sportorganizationservice.repository.SportOrganizationRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +14,8 @@ import java.util.UUID;
 
 @Service
 public class SportOrganizationService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SportOrganizationService.class);
 
     @Autowired
     ConfigService configService;
@@ -32,11 +37,8 @@ public class SportOrganizationService {
      * @return SportOrganization
      */
     public SportOrganization createSportOrganization(SportOrganization sportOrganization) {
-        System.out.println("something wrong 1");
         sportOrganization.setId(UUID.randomUUID().toString());
-        System.out.println("something wrong 2");
         sportOrganizationRepository.save(sportOrganization);
-        System.out.println("something wrong 3");
         return sportOrganization.withComment(configService.getProperty());
     }
 

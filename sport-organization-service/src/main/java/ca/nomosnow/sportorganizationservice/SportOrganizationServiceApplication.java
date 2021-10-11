@@ -2,6 +2,8 @@ package ca.nomosnow.sportorganizationservice;
 
 import ca.nomosnow.sportorganizationservice.utils.UserContextInterceptor;
 import org.apache.kafka.common.KafkaFuture;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -24,6 +26,8 @@ public class SportOrganizationServiceApplication {
         SpringApplication.run(SportOrganizationServiceApplication.class, args);
     }
 
+
+    private static final Logger logger = LoggerFactory.getLogger(SportOrganizationServiceApplication.class);
     /**
      * Loadbalancer
      * @return restTemplate

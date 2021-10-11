@@ -3,6 +3,8 @@ package ca.nomosnow.sport_event_service;
 import ca.nomosnow.sport_event_service.config.ConfigService;
 import ca.nomosnow.sport_event_service.model.SportEvent;
 import ca.nomosnow.sport_event_service.utils.UserContextInterceptor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -43,6 +45,8 @@ public class SportEventServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(SportEventServiceApplication.class, args);
     }
+
+    private static final Logger logger = LoggerFactory.getLogger(SportEventServiceApplication.class);
 
     @Autowired
     ConfigService configService;

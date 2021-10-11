@@ -1,4 +1,7 @@
 package ca.nomosnow.gatewayserver.filters;
+import ca.nomosnow.gatewayserver.GatewayServerApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
@@ -7,6 +10,7 @@ import java.util.List;
 
 @Component
 public class FilterUtils {
+//    Logger logger = LoggerFactory.getLogger(FilterUtils.class);
     public static final String CORRELATION_ID = "tmx-correlation-id";
     public static final String AUTH_TOKEN     = "Authorization";
     public static final String USER_ID        = "tmx-user-id";
