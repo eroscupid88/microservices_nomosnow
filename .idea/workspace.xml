@@ -125,12 +125,12 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/mysql_keycloak" />
-      <recent name="$PROJECT_DIR$/mysql_keycloak/realm-export" />
-      <recent name="$PROJECT_DIR$/realm-export" />
       <recent name="$PROJECT_DIR$/postgresql" />
+      <recent name="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/model" />
+      <recent name="$PROJECT_DIR$/sport-organization-service" />
+      <recent name="$PROJECT_DIR$/gateway-server" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ca.nomosnow.sportorganizationservice.events.model" />
@@ -139,12 +139,12 @@
       <recent name="ca.nomosnow.sportorganizationservice.config" />
       <recent name="ca.nomosnow.sportorganizationservice.controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/mysql_keycloak" />
+      <recent name="$PROJECT_DIR$/mysql_keycloak/realm-export" />
+      <recent name="$PROJECT_DIR$/realm-export" />
       <recent name="$PROJECT_DIR$/postgresql" />
-      <recent name="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/model" />
-      <recent name="$PROJECT_DIR$/sport-organization-service" />
-      <recent name="$PROJECT_DIR$/gateway-server" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -510,7 +510,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/client/SportOrganizationRestTemplateClient.java</url>
           <line>17</line>
-          <properties class="ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient" method="getSportOrganization">
+          <properties class="ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="20" />
@@ -518,7 +518,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java</url>
           <line>119</line>
-          <properties class="ca.nomosnow.sport_event_service.service.SportEventService" method="retrieveOrganizationInfo">
+          <properties class="ca.nomosnow.sport_event_service.service.SportEventService">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="29" />
