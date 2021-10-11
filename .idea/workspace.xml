@@ -23,14 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/CustomChannels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/handler/OrganizationChangeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/model/OrganizationChangeModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/config/ConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/config/ConfigService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/client/SportOrganizationRestTemplateClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/client/SportOrganizationRestTemplateClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,11 +120,11 @@
       <recent name="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ca.nomosnow.sport_event_service.events.handler" />
+      <recent name="ca.nomosnow.sport_event_service.events.model" />
+      <recent name="ca.nomosnow.sport_event_service.events" />
       <recent name="ca.nomosnow.sport_event_service.repository" />
       <recent name="ca.nomosnow.sportorganizationservice.events.model" />
-      <recent name="ca.nomosnow.sportorganizationservice.events.source" />
-      <recent name="ca.nomosnow.sport_event_service.config" />
-      <recent name="ca.nomosnow.sportorganizationservice.config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -333,7 +329,7 @@
       <workItem from="1633651890668" duration="59414000" />
       <workItem from="1633824373820" duration="5163000" />
       <workItem from="1633830423001" duration="4040000" />
-      <workItem from="1633886956368" duration="14348000" />
+      <workItem from="1633886956368" duration="15250000" />
     </task>
     <servers />
   </component>
