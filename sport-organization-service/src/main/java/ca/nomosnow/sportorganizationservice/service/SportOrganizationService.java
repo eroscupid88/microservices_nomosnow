@@ -1,5 +1,7 @@
 package ca.nomosnow.sportorganizationservice.service;
 
+import brave.ScopedSpan;
+import brave.Tracer;
 import ca.nomosnow.sportorganizationservice.SportOrganizationServiceApplication;
 import ca.nomosnow.sportorganizationservice.config.ConfigService;
 import ca.nomosnow.sportorganizationservice.model.SportOrganization;
@@ -21,14 +23,29 @@ public class SportOrganizationService {
     ConfigService configService;
     @Autowired
     SportOrganizationRepository sportOrganizationRepository;
-
+    @Autowired
+    Tracer tracer;
     /**
      * findById method to find SportOrganization Object
      * @param sportOrganizationId String id
      * @return one or null if not found
      */
     public SportOrganization getSportOrganization(String sportOrganizationId) {
-        return sportOrganizationRepository.findSportOrganizationById(sportOrganizationId);
+        Optional<SportOrganization> opt = null;
+        ScopedSpan newSpan = tracer.startScopedSpan("getOrgDBCall");
+        try {
+            opt = sportOrganizationRepository.findById(sportOrganizationId);
+            if (opt.isEmpty()) {
+                String message = String.format("Unable to find an organization with the Organization id %s", sportOrganizationId);
+                logger.error(message);
+                throw new IllegalArgumentException(message);
+            }logger.debug("Retrieving Organization Info: " + opt.get().toString());
+            }finally {
+            newSpan.tag("peer.service", "postgres");
+            newSpan.annotate("Client received");
+            newSpan.finish();
+        }
+        return opt.get();
     }
 
     /**

@@ -1,7 +1,8 @@
 spring:
   application:
     name: eureka-server
-
+server:
+  port: 7070
 eureka:
   renewalPercentThreshold: 0.85
   instance:
@@ -10,11 +11,10 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: http://{eureka.instance.hostname}:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 5
-server:
-  port: 7070
+
 management:
   endpoints:
     web:

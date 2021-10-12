@@ -1,5 +1,6 @@
 package ca.nomosnow.sport_event_service.service.client;
 
+import brave.Tracer;
 import ca.nomosnow.sport_event_service.model.SportOrganization;
 import ca.nomosnow.sport_event_service.redisCache.RedisCacheSupport;
 import ca.nomosnow.sport_event_service.repository.OrganizationRedisRepository;
@@ -23,6 +24,7 @@ public class SportOrganizationRestTemplateClient {
     RestTemplate restTemplate;
     @Autowired
     RedisCacheSupport redis;
+
     private static final Logger logger = LoggerFactory.getLogger(SportOrganizationRestTemplateClient.class);
 
     public SportOrganization getSportOrganization(String organizationId){

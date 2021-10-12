@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SportOrganizationRepository extends CrudRepository<SportOrganization, String> {
-    public SportOrganization findSportOrganizationById(String sportOrganizationId);
 }

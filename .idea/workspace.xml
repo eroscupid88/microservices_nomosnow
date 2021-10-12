@@ -23,48 +23,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_aws_brave_propagation_aws_0_21_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_context_slf4j_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_http_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_httpasyncclient_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_httpclient_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_jms_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_kafka_clients_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_kafka_streams_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_messaging_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_mongodb_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_rpc_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_spring_rabbit_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_reporter_2_16_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_reporter_metrics_micrometer_2_16_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_zipkin2_zipkin_2_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_logstash_logback_logstash_logback_encoder_6_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_api_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_autoconfigure_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_brave_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_instrumentation_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_sleuth_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELK-stack-config/config/logstash.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/ActionEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sport-organization-service/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sport_event_service/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_reporter_brave_2_16_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_activemq_client_2_16_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_amqp_client_2_16_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_kafka_2_16_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_zipkin_3_0_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/eureka-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/eureka-server.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/gateway-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/gateway-server.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-keycloak.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service-native.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/ticket-service-dev.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/ticket-service-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/ticket-service.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/GatewayServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/GatewayServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/FilterUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/FilterUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/ResponseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/ResponseFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/TrackingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/TrackingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sport-organization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/SportOrganizationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/SportOrganizationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/repository/SportOrganizationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/repository/SportOrganizationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/service/SportOrganizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/service/SportOrganizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContextFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContextFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContextInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/utils/UserContextInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sport_event_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/handler/OrganizationChangeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/handler/OrganizationChangeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/redisCache/RedisCacheSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/redisCache/RedisCacheSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/client/SportOrganizationRestTemplateClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/client/SportOrganizationRestTemplateClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +68,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dillon" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -139,9 +130,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gateway-server/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -151,25 +142,25 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gateway-server/src/main/resources" />
-      <recent name="$PROJECT_DIR$/sport_event_service/src/main/resources" />
-      <recent name="$PROJECT_DIR$/sport-organization-service/src/main/resources" />
-      <recent name="$PROJECT_DIR$/ELK-stack-config" />
-      <recent name="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/postgresql" />
+      <recent name="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/model" />
+      <recent name="$PROJECT_DIR$/sport-organization-service" />
+      <recent name="$PROJECT_DIR$/gateway-server" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ca.nomosnow.sportorganizationservice.utils" />
-      <recent name="ca.nomosnow.sport_event_service.events.handler" />
-      <recent name="ca.nomosnow.sport_event_service.events.model" />
-      <recent name="ca.nomosnow.sport_event_service.events" />
-      <recent name="ca.nomosnow.sport_event_service.repository" />
+      <recent name="ca.nomosnow.sportorganizationservice.events.model" />
+      <recent name="ca.nomosnow.sportorganizationservice.events.source" />
+      <recent name="ca.nomosnow.sport_event_service.config" />
+      <recent name="ca.nomosnow.sportorganizationservice.config" />
+      <recent name="ca.nomosnow.sportorganizationservice.controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/mysql_keycloak" />
       <recent name="$PROJECT_DIR$/mysql_keycloak/realm-export" />
       <recent name="$PROJECT_DIR$/realm-export" />
+      <recent name="$PROJECT_DIR$/postgresql" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -179,7 +170,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.sportorganizationservice: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.SportOrganizationServiceApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -187,6 +178,53 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="eureka-server" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="eureka-server" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -202,7 +240,6 @@
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.eurekaserver.EurekaServerApplication" />
-      <option name="ACTIVE_PROFILES" value="dev" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,7 +248,7 @@
     <configuration name="GatewayserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gateway-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.gatewayserver.GatewayServerApplication" />
-      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ACTIVE_PROFILES" value="native" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,7 +257,7 @@
     <configuration name="SportEventServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sport_event_service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.sport_event_service.SportEventServiceApplication" />
-      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ACTIVE_PROFILES" value="native" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -238,7 +275,7 @@
     <configuration name="SportOrganizationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sport-organization-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.sportorganizationservice.SportOrganizationServiceApplication" />
-      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ACTIVE_PROFILES" value="native" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -257,25 +294,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.kibana: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.keycloak: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="kibana" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.logstash: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="logstash" />
+              <option value="keycloak" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -309,25 +333,38 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.zipkin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="zipkin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.gatewayserver: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.sporteventservice: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.sportorganizationservice: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.zipkin: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.SportEventServiceApplication" />
       <item itemvalue="Spring Boot.SportOrganizationServiceApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
-      <item itemvalue="Docker.docker-compose.yml.gatewayserver: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.logstash: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.kibana: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.sporteventservice: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.sportorganizationservice: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.gatewayserver: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.sporteventservice: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.sportorganizationservice: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.logstash: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.kibana: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.sporteventservice: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.gatewayserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.zipkin: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -367,7 +404,7 @@
       <workItem from="1633651890668" duration="59414000" />
       <workItem from="1633824373820" duration="5163000" />
       <workItem from="1633830423001" duration="4040000" />
-      <workItem from="1633886956368" duration="36270000" />
+      <workItem from="1633886956368" duration="599000" />
     </task>
     <servers />
   </component>
@@ -387,10 +424,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="626" y="299" width="648" height="301" key="#Assign_Data_Sources" timestamp="1633896369928">
+    <state x="626" y="299" width="648" height="301" key="#Assign_Data_Sources" timestamp="1632349749358">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="626" y="299" width="648" height="301" key="#Assign_Data_Sources/0.0.1440.900@0.0.1440.900" timestamp="1633896369928" />
+    <state x="626" y="299" width="648" height="301" key="#Assign_Data_Sources/0.0.1440.900@0.0.1440.900" timestamp="1632349749358" />
     <state x="354" y="132" key="#Inspections" timestamp="1632429415028">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -399,15 +436,19 @@
       <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state x="320" y="77" key="#Plugins/0.25.1440.815@0.25.1440.815" timestamp="1633378733457" />
-    <state x="208" y="0" key="#Project_Structure" timestamp="1633902627742">
+    <state x="208" y="0" key="#Project_Structure" timestamp="1632429425536">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="208" y="0" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1633902627742" />
+    <state x="208" y="0" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1632429425536" />
     <state x="208" y="25" key="#Project_Structure/0.25.1440.815@0.25.1440.815" timestamp="1631741693070" />
-    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632780373534">
+    <state x="458" y="223" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1633989273749">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1632780373534" />
+    <state x="458" y="223" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1633989273749" />
+    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1634005107785">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="0" width="1200" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1634005107785" />
     <state x="621" y="213" key="#com.intellij.ide.util.MemberChooser" timestamp="1632519659983">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -421,59 +462,59 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="449" y="198" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1633482493113" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1633651416417">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.0.bottom" timestamp="1634005095988">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1633544350259" />
+    <state width="1024" height="315" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1634005095988" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1633651416417" />
     <state width="1127" height="330" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1633383793483" />
     <state width="1127" height="331" key="GridCell.Tab.0.bottom/0.25.1440.818@0.25.1440.818" timestamp="1633129172618" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1633651416416">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.0.center" timestamp="1634005095986">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1633544350256" />
+    <state width="1024" height="315" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1634005095986" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1633651416416" />
     <state width="1127" height="330" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1633383793482" />
     <state width="1127" height="331" key="GridCell.Tab.0.center/0.25.1440.818@0.25.1440.818" timestamp="1633129172617" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1633651416415">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.0.left" timestamp="1634005095984">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1633544350255" />
+    <state width="1024" height="315" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1634005095984" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1633651416415" />
     <state width="1127" height="330" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1633383793481" />
     <state width="1127" height="331" key="GridCell.Tab.0.left/0.25.1440.818@0.25.1440.818" timestamp="1633129172617" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1633651416417">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.0.right" timestamp="1634005095987">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1633544350257" />
+    <state width="1024" height="315" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1634005095987" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1633651416417" />
     <state width="1127" height="330" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1633383793482" />
     <state width="1127" height="331" key="GridCell.Tab.0.right/0.25.1440.818@0.25.1440.818" timestamp="1633129172618" />
-    <state width="1024" height="329" key="GridCell.Tab.1.bottom" timestamp="1633651416410">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.1.bottom" timestamp="1634005095991">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1633544350263" />
+    <state width="1024" height="315" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1634005095991" />
     <state width="1024" height="329" key="GridCell.Tab.1.bottom/0.25.1440.815@0.25.1440.815" timestamp="1633651416410" />
     <state width="1127" height="330" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" timestamp="1633383793485" />
     <state width="1127" height="331" key="GridCell.Tab.1.bottom/0.25.1440.818@0.25.1440.818" timestamp="1633129172619" />
-    <state width="1024" height="329" key="GridCell.Tab.1.center" timestamp="1633651416409">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.1.center" timestamp="1634005095989">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1633544350261" />
+    <state width="1024" height="315" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1634005095989" />
     <state width="1024" height="329" key="GridCell.Tab.1.center/0.25.1440.815@0.25.1440.815" timestamp="1633651416409" />
     <state width="1127" height="330" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" timestamp="1633383793484" />
     <state width="1127" height="331" key="GridCell.Tab.1.center/0.25.1440.818@0.25.1440.818" timestamp="1633129172619" />
-    <state width="1024" height="329" key="GridCell.Tab.1.left" timestamp="1633651416409">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.1.left" timestamp="1634005095989">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1633544350261" />
+    <state width="1024" height="315" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1634005095989" />
     <state width="1024" height="329" key="GridCell.Tab.1.left/0.25.1440.815@0.25.1440.815" timestamp="1633651416409" />
     <state width="1127" height="330" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" timestamp="1633383793484" />
     <state width="1127" height="331" key="GridCell.Tab.1.left/0.25.1440.818@0.25.1440.818" timestamp="1633129172618" />
-    <state width="1024" height="329" key="GridCell.Tab.1.right" timestamp="1633651416410">
-      <screen x="0" y="25" width="1440" height="815" />
+    <state width="1024" height="315" key="GridCell.Tab.1.right" timestamp="1634005095990">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1024" height="329" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1633544350262" />
+    <state width="1024" height="315" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1634005095990" />
     <state width="1024" height="329" key="GridCell.Tab.1.right/0.25.1440.815@0.25.1440.815" timestamp="1633651416410" />
     <state width="1127" height="330" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" timestamp="1633383793485" />
     <state width="1127" height="331" key="GridCell.Tab.1.right/0.25.1440.818@0.25.1440.818" timestamp="1633129172619" />
@@ -525,6 +566,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="720" height="450" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1632442827953" />
+    <state x="421" y="82" width="597" height="735" key="find.popup" timestamp="1633989074994">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="421" y="82" width="597" height="735" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1633989074994" />
     <state x="355" y="25" width="729" height="815" key="new project wizard" timestamp="1632776133964">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -546,6 +591,27 @@
           <line>14</line>
           <properties class="ca.nomosnow.sport_event_service.service.client.SportOrganizationFeignClient" method="getSportOrganization" />
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/client/SportOrganizationRestTemplateClient.java</url>
+          <line>29</line>
+          <properties class="ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient" method="getSportOrganization">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java</url>
+          <line>126</line>
+          <properties class="ca.nomosnow.sport_event_service.service.SportEventService">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

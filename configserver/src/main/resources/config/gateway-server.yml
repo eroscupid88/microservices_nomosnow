@@ -1,13 +1,18 @@
 spring:
   application:
     name: gateway-server
+  zipkin:
+    baseUrl: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1
   cloud:
     gateway:
       discovery:
-        # this enable eureka path
-        # locator:
-        #   enabled: true
-        #   lower-case-service-id: true
+      # this enable eureka path
+      # locator:
+      #   enabled: true
+      #   lower-case-service-id: true
       routes:
         - id: sport-organization-service
           uri: lb://SPORT-ORGANIZATION-SERVICE
@@ -15,14 +20,12 @@ spring:
             - Path=/organization/**
           filters:
             - RewritePath=/organization/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
         - id: sport-event-service
           uri: lb://SPORT-EVENT-SERVICE
           predicates:
             - Path=/event/**
           filters:
             - RewritePath=/event/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
       # use service discovery as route
     loadbalancer.ribbon.enabled: false
 
@@ -36,7 +39,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eurekaserver:7070/eureka/
+      defaultZone: http://localhost:7070/eureka/
 
 management:
   endpoints:

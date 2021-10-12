@@ -1,9 +1,9 @@
 package ca.nomosnow.sport_event_service.redisCache;
 
-import ca.nomosnow.sport_event_service.model.SportEvent;
+import brave.ScopedSpan;
+import brave.Tracer;
 import ca.nomosnow.sport_event_service.model.SportOrganization;
 import ca.nomosnow.sport_event_service.repository.OrganizationRedisRepository;
-//import ca.nomosnow.sport_event_service.repository.SportEventRedisRepository;
 import ca.nomosnow.sport_event_service.repository.SportEventRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,8 @@ public class RedisCacheSupport {
     OrganizationRedisRepository redisOrganizationRepository;
     @Autowired
     SportEventRepository redisSportEventRepository;
-
+    @Autowired
+    Tracer tracer;
 
     /**
      * Method checkRedisCache to check and return SportOrganization. return null if there is none
@@ -26,6 +27,8 @@ public class RedisCacheSupport {
      * @return SportOrganization if found, null otherwise
      */
     public SportOrganization OrganizationCheckRedisCache(String sportOrganizationId) {
+        ScopedSpan newSpan = tracer.startScopedSpan("readSportOrganizationDataFromRedis");
+
         try {
             return redisOrganizationRepository
                     .findById(sportOrganizationId)
@@ -34,6 +37,10 @@ public class RedisCacheSupport {
             logger.error("Error encountered while trying to retrieve organization{} check Redis Cache.  Exception {}",
                     sportOrganizationId, ex);
             return null;
+        }finally {
+            newSpan.tag("peer.service", "redis");
+            newSpan.annotate("Client received");
+            newSpan.finish();
         }
     }
 

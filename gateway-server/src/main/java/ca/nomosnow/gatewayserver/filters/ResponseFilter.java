@@ -10,17 +10,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import reactor.core.publisher.Mono;
 
+
 @Configuration
 public class ResponseFilter {
- 
-    final Logger logger =LoggerFactory.getLogger(ResponseFilter.class);
+
+    private static final Logger logger =LoggerFactory.getLogger(ResponseFilter.class);
 
     @Autowired
     Tracer tracer;
 
     @Autowired
-	FilterUtils filterUtils;
- 
+    FilterUtils filterUtils;
+
     @Bean
     public GlobalFilter postGlobalFilter() {
         return (exchange, chain) -> {
@@ -33,3 +34,6 @@ public class ResponseFilter {
         };
     }
 }
+
+
+

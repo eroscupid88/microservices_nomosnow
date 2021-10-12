@@ -12,6 +12,7 @@ import java.io.IOException;
 public class UserContextFilter implements Filter {
     private static final Logger logger = LoggerFactory.getLogger(UserContextFilter.class);
 
+
     /**
      *  doFilter method to retrived value of HTTPServlet header to UserContext which will be store in local thread
      * @param servletRequest HTTPServlet header request
@@ -27,10 +28,10 @@ public class UserContextFilter implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
 
-        UserContextHolder.getContext().setCorrelationId(  httpServletRequest.getHeader(UserContext.CORRELATION_ID) );
-        UserContextHolder.getContext().setUserId(httpServletRequest.getHeader(UserContext.USER_ID));
-        UserContextHolder.getContext().setAuthToken(httpServletRequest.getHeader(UserContext.AUTH_TOKEN));
-        UserContextHolder.getContext().setOrgId(httpServletRequest.getHeader(UserContext.ORGANIZATION_ID));
+        UserContext.setCorrelationId(  httpServletRequest.getHeader(UserContext.CORRELATION_ID) );
+        UserContext.setUserId(httpServletRequest.getHeader(UserContext.USER_ID));
+        UserContext.setAuthToken(httpServletRequest.getHeader(UserContext.AUTH_TOKEN));
+        UserContext.setOrgId(httpServletRequest.getHeader(UserContext.ORGANIZATION_ID));
 
 
 

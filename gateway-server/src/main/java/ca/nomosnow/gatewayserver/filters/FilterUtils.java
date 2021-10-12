@@ -28,6 +28,8 @@ public class FilterUtils {
             return null;
         }
     }
+
+
     public String getAuthToken(HttpHeaders requestHeaders){
         if (requestHeaders.get(AUTH_TOKEN) !=null) {
             List<String> header = requestHeaders.get(AUTH_TOKEN);
@@ -38,7 +40,6 @@ public class FilterUtils {
         }
     }
 
-
     public ServerWebExchange setRequestHeader(ServerWebExchange exchange, String name, String value) {
         return exchange.mutate().request(
                 exchange.getRequest().mutate()
@@ -46,6 +47,7 @@ public class FilterUtils {
                         .build())
                 .build();
     }
+
     public ServerWebExchange setCorrelationId(ServerWebExchange exchange, String correlationId) {
         return this.setRequestHeader(exchange, CORRELATION_ID, correlationId);
     }
