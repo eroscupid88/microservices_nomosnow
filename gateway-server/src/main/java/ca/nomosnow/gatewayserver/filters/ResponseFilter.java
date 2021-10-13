@@ -26,9 +26,11 @@ public class ResponseFilter {
     public GlobalFilter postGlobalFilter() {
         return (exchange, chain) -> {
             return chain.filter(exchange).then(Mono.fromRunnable(() -> {
-                String traceId = tracer.currentSpan().context().traceIdString();
-                logger.debug("Adding the correlation id to the outbound headers. {}", traceId);
-                exchange.getResponse().getHeaders().add(FilterUtils.CORRELATION_ID, traceId);
+                HttpHeaders requestHeaders = exchange.getRequest().getHeaders();
+                System.out.println(tracer);
+                String correlationId = filterUtils.getCorrelationId(requestHeaders);
+                logger.debug("Adding the correlation id to the outbound headers. {}", correlationId);
+                exchange.getResponse().getHeaders().add(FilterUtils.CORRELATION_ID, correlationId);
                 logger.debug("Completing outgoing request for {}.", exchange.getRequest().getURI());
             }));
         };
