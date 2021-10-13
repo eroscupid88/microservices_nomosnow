@@ -306,15 +306,15 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
+      <item itemvalue="Docker.keycloak-script/Dockerfile" />
+      <item itemvalue="Docker.docker-compose.yml.mysql-keycloak: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.sportevent_database: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.SportEventServiceApplication" />
       <item itemvalue="Spring Boot.SportOrganizationServiceApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
-      <item itemvalue="Docker.keycloak-script/Dockerfile" />
-      <item itemvalue="Docker.docker-compose.yml.mysql-keycloak: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.sportevent_database: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
