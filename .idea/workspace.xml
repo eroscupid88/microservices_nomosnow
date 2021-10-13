@@ -555,7 +555,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/client/SportOrganizationRestTemplateClient.java</url>
           <line>29</line>
-          <properties class="ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient" method="getSportOrganization">
+          <properties class="ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="20" />
