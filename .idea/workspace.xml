@@ -24,10 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap-native.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-native.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/ResponseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/ca/nomosnow/gatewayserver/filters/ResponseFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap-native.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application-native.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +83,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1yBDOgOXhuB2spRvypGorCkXoV3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
