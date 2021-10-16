@@ -3,9 +3,9 @@
  */
 package ca.nomosnow.sport_event_service.controller;
 
-import ca.nomosnow.sport_event_service.model.utils.ErrorMessage;
-import ca.nomosnow.sport_event_service.model.utils.ResponseWrapper;
-import ca.nomosnow.sport_event_service.model.utils.RestErrorList;
+import ca.nomosnow.sport_event_service.domain.model.utils.ErrorMessage;
+import ca.nomosnow.sport_event_service.domain.model.utils.ResponseWrapper;
+import ca.nomosnow.sport_event_service.domain.model.utils.RestErrorList;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

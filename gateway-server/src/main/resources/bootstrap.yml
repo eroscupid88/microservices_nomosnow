@@ -3,8 +3,8 @@ spring:
     name: gateway-server
   cloud:
     config:
-      uri: http://configserver:7071
-#      uri: http://localhost:7071
+      uri: http://${configserver:localhost}:7071
+
       failFast: true
       retry:
         initialInterval: 3000
@@ -17,4 +17,7 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     ca.nomosnow.gatewayserver: DEBUG
+pulse:
+  logstash:
+    host: ${logstash:localhost}:6000
 

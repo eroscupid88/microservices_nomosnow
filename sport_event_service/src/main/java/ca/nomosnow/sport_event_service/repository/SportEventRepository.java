@@ -1,5 +1,5 @@
 package ca.nomosnow.sport_event_service.repository;
-import ca.nomosnow.sport_event_service.model.SportEvent;
+import ca.nomosnow.sport_event_service.domain.model.SportEvent;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -2,7 +2,7 @@ package ca.nomosnow.sport_event_service.redisCache;
 
 import brave.ScopedSpan;
 import brave.Tracer;
-import ca.nomosnow.sport_event_service.model.SportOrganization;
+import ca.nomosnow.sport_event_service.domain.model.SportOrganization;
 import ca.nomosnow.sport_event_service.repository.OrganizationRedisRepository;
 import ca.nomosnow.sport_event_service.repository.SportEventRepository;
 import org.slf4j.Logger;

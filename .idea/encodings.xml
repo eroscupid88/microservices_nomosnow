@@ -6,7 +6,13 @@
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/share-resource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/share-resource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sport-event-service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sport-event-service-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sport-organization-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sport-organization-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sport_event_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sport_event_service/src/main/resources" charset="UTF-8" />
   </component>

@@ -9,15 +9,20 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sport_event_service" />
         <module name="config-server" />
-        <module name="gateway-server" />
-        <module name="eureka-server" />
         <module name="sport-organization-service" />
+        <module name="gateway-server" />
+        <module name="share-resource" />
+        <module name="eureka-server" />
+        <module name="sport-event-service-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="config-server" target="11" />
       <module name="eureka-server" target="11" />
       <module name="gateway-server" target="11" />
+      <module name="nomosnow" target="1.5" />
+      <module name="share-resource" target="11" />
+      <module name="sport-event-service-api" target="11" />
       <module name="sport-organization-service" target="11" />
       <module name="sport_event_service" target="11" />
     </bytecodeTargetLevel>
@@ -27,6 +32,8 @@
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="gateway-server" options="-parameters" />
+      <module name="share-resource" options="-parameters" />
+      <module name="sport-event-service-api" options="-parameters" />
       <module name="sport-organization-service" options="-parameters" />
       <module name="sport_event_service" options="-parameters" />
     </option>

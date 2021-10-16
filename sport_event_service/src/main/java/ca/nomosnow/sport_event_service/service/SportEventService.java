@@ -1,34 +1,21 @@
 package ca.nomosnow.sport_event_service.service;
 
-import ca.nomosnow.sport_event_service.config.ConfigService;
-import ca.nomosnow.sport_event_service.model.SportEvent;
-import ca.nomosnow.sport_event_service.model.SportOrganization;
-import ca.nomosnow.sport_event_service.redisCache.RedisCacheSupport;
+import ca.nomosnow.sport_event_service.configuration.ConfigService;
+import ca.nomosnow.sport_event_service.domain.model.SportEvent;
+import ca.nomosnow.sport_event_service.domain.model.SportOrganization;
 import ca.nomosnow.sport_event_service.repository.SportEventRepository;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationDiscoveryClient;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationFeignClient;
 import ca.nomosnow.sport_event_service.service.client.SportOrganizationRestTemplateClient;
-
-import java.util.*;
-
 import ca.nomosnow.sport_event_service.utils.UserContext;
-import ca.nomosnow.sport_event_service.utils.UserContextHolder;
-import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
-import io.github.resilience4j.retry.annotation.Retry;
-import org.jetbrains.annotations.NotNull;
-import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
-
+import java.util.*;
 import java.util.concurrent.TimeoutException;
 
 
@@ -51,7 +38,6 @@ public class SportEventService {
     SportOrganizationDiscoveryClient sportOrganizationDiscoveryClient;
     @Autowired
     SportOrganizationRestTemplateClient sportOrganizationRestTemplateClient;
-
 
     /**
      *
@@ -125,7 +111,7 @@ public class SportEventService {
         return sportEvent.withComment(configService.getProperty());
     }
     private SportOrganization retrieveOrganizationInfo(String organizationId, String clientType) {
-        SportOrganization organization = null;
+        SportOrganization organization;
 
         switch (clientType) {
             case "feign":
@@ -157,12 +143,16 @@ public class SportEventService {
 //            //                 type default  of bulkhead is semaphore//
 //            type= Bulkhead.Type.THREADPOOL,
 //            fallbackMethod="fallbackMethodForCircuitBreaker")
-    public List<SportEvent> getSportEventsByOrganizationId(String organizationId) throws TimeoutException {
+    public List<SportEvent> getSportEventsByOrganizationId(String organizationId) {
         logger.debug("Get List of SportEvents by Organization with Correlation Id: {}", UserContext.getCorrelationId());
 //        randomlyRunLong();
         return sportEventRepository.findByOrganizationId(organizationId);
     }
 
+
+    public void approved(String sportEventId) {
+
+    }
 
     /**
      * Fallback method when circuitBreaker open

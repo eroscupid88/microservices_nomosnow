@@ -1,6 +1,6 @@
 package ca.nomosnow.sport_event_service.service.client;
 
-import ca.nomosnow.sport_event_service.model.SportOrganization;
+import ca.nomosnow.sport_event_service.domain.model.SportOrganization;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
