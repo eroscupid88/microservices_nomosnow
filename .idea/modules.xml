@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/nomosnow.iml" filepath="$PROJECT_DIR$/nomosnow.iml" />
       <module fileurl="file://$PROJECT_DIR$/share-resource/share-resource.iml" filepath="$PROJECT_DIR$/share-resource/share-resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/sport-event-service-api/sport-event-service-api.iml" filepath="$PROJECT_DIR$/sport-event-service-api/sport-event-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sport-organization-event-create-department-service/sport-organization-event-create-department-service.iml" filepath="$PROJECT_DIR$/sport-organization-event-create-department-service/sport-organization-event-create-department-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/sport-organization-service/sport-organization-service.iml" filepath="$PROJECT_DIR$/sport-organization-service/sport-organization-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/sport_event_service/sport_event_service.iml" filepath="$PROJECT_DIR$/sport_event_service/sport_event_service.iml" />
     </modules>
