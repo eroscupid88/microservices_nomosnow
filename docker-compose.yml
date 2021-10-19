@@ -20,22 +20,24 @@ services:
 #      - my-db:/var/lib/mysql
 #    networks:
 #      - backend
-  mysql8:
-    build:
-      context: ./mysql-eventuate-cdc
-      dockerfile: Dockerfile-mysql8
-    image: eventuateio/eventuate-mysql8
-    ports:
-      - 3307:3307
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_USER=mysqluser
-      - MYSQL_PASSWORD=mysqlpw
-      - USE_DB_ID=true
-      - USE_JSON_PAYLOAD_AND_HEADERS=${USE_JSON_PAYLOAD_AND_HEADERS}
+#  if using mysql8
+#  mysql8:
+#    build:
+#      context: ./mysql-eventuate-cdc
+#      dockerfile: Dockerfile-mysql8
+#    image: eventuateio/eventuate-mysql8
+#    ports:
+#      - 3307:3307
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=rootpassword
+#      - MYSQL_USER=mysqluser
+#      - MYSQL_PASSWORD=mysqlpw
+#      - USE_DB_ID=true
+#      - USE_JSON_PAYLOAD_AND_HEADERS=${USE_JSON_PAYLOAD_AND_HEADERS}
 
   zookeeper:
     image: confluentinc/cp-zookeeper:5.2.4
+    container_name: zookeeper
     ports:
       - 2181:2181
     environment:
@@ -44,6 +46,7 @@ services:
 
   kafka:
     image: "confluentinc/cp-kafka:5.2.4"
+    container_name: kafka
     ports:
       - 9092:9092
       - 29092:29092
@@ -59,31 +62,36 @@ services:
       KAFKA_HEAP_OPTS: -Xmx192m
   eventuate-cdc-service:
     image: eventuateio/eventuate-tram-cdc-mysql-service
+    container_name: eventuate-cdc-service
     ports:
       - "8099:8080"
     links:
-      - mysql8
+      - postgres_database
       - kafka
       - zookeeper
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql8/eventuate
-      SPRING_DATASOURCE_USERNAME: mysqluser
-      SPRING_DATASOURCE_PASSWORD: mysqlpw
-      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.jdbc.Driver
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_database:5005/eventuate
+      SPRING_DATASOURCE_USERNAME: eventuate
+      SPRING_DATASOURCE_PASSWORD: eventuate
+      SPRING_DATASOURCE_TEST_ON_BORROW: "true"
+      SPRING_DATASOURCE_VALIDATION_QUERY: SELECT 1
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
       EVENTUATELOCAL_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
       EVENTUATELOCAL_ZOOKEEPER_CONNECTION_STRING: zookeeper:2181
-      EVENTUATELOCAL_CDC_DB_USER_NAME: root
-      EVENTUATELOCAL_CDC_DB_PASSWORD: rootpassword
-      EVENTUATELOCAL_CDC_READER_NAME: MySqlReader
+
+      EVENTUATELOCAL_CDC_READER_NAME: PostgresPollingReader
       EVENTUATE_OUTBOX_ID: 1
-      EVENTUATELOCAL_CDC_MYSQL_BINLOG_CLIENT_UNIQUE_ID: 1234567890
-      EVENTUATELOCAL_CDC_READ_OLD_DEBEZIUM_DB_OFFSET_STORAGE_TOPIC: "false"
-      EVENTUATE_CDC_PIPELINE_PIPELINE1_TYPE: eventuate-tram
-      EVENTUATE_CDC_PIPELINE_PIPELINE1_READER: reader1
-      EVENTUATE_CDC_PIPELINE_PIPELINE1_EVENTUATEDATABASESCHEMA: sport-events-service
+      SPRING_PROFILES_ACTIVE: EventuatePolling
+      EVENTUATE_CDC_TYPE: EventuateTram
+      JAVA_OPTS: -Xmx64m
+#      EVENTUATE_CDC_PIPELINE_PIPELINE1_TYPE: eventuate-tram
+#      EVENTUATE_CDC_PIPELINE_PIPELINE1_READER: reader1
+#      EVENTUATE_CDC_PIPELINE_PIPELINE1_EVENTUATEDATABASESCHEMA: sport-events-service
 
   postgres_database:
-    image: postgres:latest
+    build:
+      context: ./postgresql-eventuate-cdc
+    image: postgres
     container_name: postgres_database
     restart: on-failure
     command: -p 5001 -p 5002 -p 5003 -p 5004 -p 5005
@@ -92,9 +100,10 @@ services:
     ports:
       - 5001-5005:5001-5005
     environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
-      POSTGRES_DB:       "sporteventorganization"
+      POSTGRES_USER: eventuate
+      POSTGRES_PASSWORD: eventuate
+      POSTGRES_DB:       eventuate
+      USE_DB_ID: "true"
     volumes:
       - ./postgresql/organization_init.sql:/docker-entrypoint-initdb.d/1-organization_init.sql
       - ./postgresql/organization_data.sql:/docker-entrypoint-initdb.d/2-organization_data.sql
@@ -110,33 +119,6 @@ services:
       backend:
         aliases:
           - "database"
-#  sportevent_database:
-#    image: postgres:latest
-#    container_name: postgres_sportevent_database
-#    restart: on-failure
-#    command: -p 5000
-#    expose:
-#      - "5000"
-#    ports:
-#      - "5000:5000"
-#    environment:
-#      POSTGRES_USER: "postgres"
-#      POSTGRES_PASSWORD: "postgres"
-#      POSTGRES_DB:       "sporteventservice"
-#    volumes:
-#      - ./postgresql/sportevent_init.sql:/docker-entrypoint-initdb.d/1-sportevent_init.sql
-#      - ./postgresql/sportevent_data.sql:/docker-entrypoint-initdb.d/2-sportevent_data.sql
-#    healthcheck:
-#      test: ["CMD", "curl", "-f", "http://localhost"]
-#      interval: 1m30s
-#      timeout: 10s
-#      retries: 3
-#      start_period: 40s
-#    networks:
-#      backend:
-#        aliases:
-#          - "sportevent_databases"
-
   configserver:
     build: ./configserver
     image: configserver:latest
