@@ -20,50 +20,28 @@ services:
 #      - my-db:/var/lib/mysql
 #    networks:
 #      - backend
-  organization_database:
+
+  postgresql_database:
     image: postgres:latest
-    container_name: postgres_organization_database
-    restart: on-failure:5
-    command: -p 5001
-    expose:
-      - "5001"
-    ports:
-      - "5001:5001"
-    environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
-      POSTGRES_DB:       "sporteventorganization"
-    volumes:
-      - ./postgresql/organization_init.sql:/docker-entrypoint-initdb.d/1-organization_init.sql
-      - ./postgresql/organization_data.sql:/docker-entrypoint-initdb.d/2-organization_data.sql
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost"]
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-    networks:
-      backend:
-        aliases:
-          - "organization_database"
-  sportevent_database:
-    image: postgres:latest
-    container_name: postgres_sportevent_database
-    restart: on-failure:5
+    container_name: postgresql_database
+    restart: on-failure
     command: -p 5000
     expose:
       - "5000"
     ports:
       - "5000:5000"
     environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
-      POSTGRES_DB:       "sporteventservice"
+      POSTGRES_USER: "eventuate"
+      POSTGRES_PASSWORD: "eventuate"
+      POSTGRES_DB: "eventuate"
     volumes:
       - ./postgresql/sportevent_init.sql:/docker-entrypoint-initdb.d/1-sportevent_init.sql
       - ./postgresql/sportevent_data.sql:/docker-entrypoint-initdb.d/2-sportevent_data.sql
+      - ./postgresql/organization_init.sql:/docker-entrypoint-initdb.d/1-organization_init.sql
+      - ./postgresql/organization_data.sql:/docker-entrypoint-initdb.d/2-organization_data.sql
+
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost"]
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
       interval: 1m30s
       timeout: 10s
       retries: 3
@@ -71,7 +49,7 @@ services:
     networks:
       backend:
         aliases:
-          - "sportevent_databases"
+          - "postgresql_databases"
 
   configserver:
     build: ./configserver
@@ -94,15 +72,14 @@ services:
         window: 120s
     container_name: eurekaServer
     ports:
-      - "7070:7070"
+      - '7070:7070'
     depends_on:
-      - organization_database
-      - sportevent_database
+      - postgresql_database
       - configserver
     networks:
       backend:
         aliases:
-          - "eurekaserver"
+          - 'eurekaserver'
   gatewayserver:
     build: ./gateway-server
     image: gatewayserver:latest
@@ -123,8 +100,7 @@ services:
       EUREKASERVER_PORT: "7070"
       CONFIGSERVER_PORT: "7071"
     depends_on:
-      - organization_database
-      - sportevent_database
+      - postgresql_database
       - configserver
       - eurekaserver
     networks:
@@ -159,6 +135,8 @@ services:
 #        aliases:
 #          - "keycloak"
 
+
+
 #  zookeeper:
 #    image: wurstmeister/zookeeper:latest
 #    container_name: zookeeperServer
@@ -190,7 +168,7 @@ services:
     image: redis:alpine
     container_name: redisServer
     ports:
-      - 6379:6379
+      - '6379:6379'
     networks:
       backend:
         aliases:
@@ -215,9 +193,9 @@ services:
       - my-db:/usr/share/elasticsearch/data
     ports:
 #       Cluster communication
-      - 9300:9300
+      - '9300:9300'
 #       REST communication
-      - 9200:9200
+      - '9200:9200'
     networks:
       backend:
         aliases:
@@ -228,7 +206,7 @@ services:
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9300"
     ports:
-      - 5601:5601
+      - '5601:5601'
     networks:
       backend:
         aliases:
@@ -259,8 +237,6 @@ services:
       backend:
         aliases:
           - "zipkin"
-
-
 # Service instances
   sporteventservice:
     build: ./sport_event_service
@@ -278,7 +254,7 @@ services:
       CONFIGSERVER_PORT:   "7071"
       DATABASESERVER_PORT: "5000"
     depends_on:
-      - sportevent_database
+      - postgresql_database
       - configserver
 #      - kafkaserver
     ports:
@@ -304,7 +280,7 @@ services:
       CONFIGSERVER_PORT:   "7071"
       DATABASESERVER_PORT: "5001"
     depends_on:
-      - organization_database
+      - postgresql_database
       - configserver
 #      - kafkaserver
     ports:
@@ -313,6 +289,60 @@ services:
       backend:
         aliases:
         - "sportorganizationservice"
+
+#
+#  organization_database:
+#    image: postgres:latest
+#    container_name: postgres_organization_database
+#    restart: on-failure
+#    command: -p 5001
+#    expose:
+#      - "5001"
+#    ports:
+#      - "5001:5001"
+#    environment:
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: "postgres"
+#      POSTGRES_DB:       "sporteventorganization"
+#    volumes:
+#      - ./postgresql/organization_init.sql:/docker-entrypoint-initdb.d/1-organization_init.sql
+#      - ./postgresql/organization_data.sql:/docker-entrypoint-initdb.d/2-organization_data.sql
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost"]
+#      interval: 1m30s
+#      timeout: 10s
+#      retries: 3
+#      start_period: 40s
+#    networks:
+#      backend:
+#        aliases:
+#          - "organization_database"
+#  sportevent_database:
+#    image: postgres:latest
+#    container_name: postgres_sportevent_database
+#    restart: on-failure
+#    command: -p 5000
+#    expose:
+#      - "5000"
+#    ports:
+#      - "5000:5000"
+#    environment:
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: "postgres"
+#      POSTGRES_DB:       "sporteventservice"
+#    volumes:
+#      - ./postgresql/sportevent_init.sql:/docker-entrypoint-initdb.d/1-sportevent_init.sql
+#      - ./postgresql/sportevent_data.sql:/docker-entrypoint-initdb.d/2-sportevent_data.sql
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost"]
+#      interval: 1m30s
+#      timeout: 10s
+#      retries: 3
+#      start_period: 40s
+#    networks:
+#      backend:
+#        aliases:
+#          - "sportevent_databases"
 
 networks:
   backend:
