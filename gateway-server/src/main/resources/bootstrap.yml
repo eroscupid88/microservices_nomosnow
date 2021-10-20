@@ -10,6 +10,9 @@ spring:
         multiplier: 1.3
         maxInterval: 10000
         maxAttempts: 20
+pulse:
+  logstash:
+    host: ${logstash:localhost}:6000
 logging:
   level:
     com.netflix: WARN
