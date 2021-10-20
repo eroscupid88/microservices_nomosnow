@@ -1,6 +1,5 @@
 package ca.nomosnow.sport_event_service;
 
-import ca.nomosnow.sport_event_service.configuration.SportEventCommandHandlersConfiguration;
 import ca.nomosnow.sport_event_service.configuration.location.LocationConfiguration;
 import ca.nomosnow.sport_event_service.configuration.messagesource.NomosnowMessageSourceConfiguration;
 import ca.nomosnow.sport_event_service.configuration.redis.NomosnowRedisConfiguration;
@@ -36,7 +35,6 @@ import java.util.Locale;
 @EnableRedisRepositories
 //@EnableCaching
 @Import({
-//        SportEventCommandHandlersConfiguration.class,
         NomosnowMessageSourceConfiguration.class,
         NomosnowRedisConfiguration.class,
         LocationConfiguration.class})

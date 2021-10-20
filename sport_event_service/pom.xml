@@ -14,10 +14,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>sport_event_service</name>
     <description>sport event service for nomosnow</description>
+<!--    <packaging>pom</packaging>-->
+
     <modules>
         <module>../sport-event-service-api</module>
         <module>../share-resource</module>
     </modules>
+
     <properties>
         <docker.image.prefix>dillon</docker.image.prefix>
         <java.version>11</java.version>
@@ -25,12 +28,13 @@
         <resilience4j.version>1.7.0</resilience4j.version>
         <eventStoreClientVersion>0.10</eventStoreClientVersion>
     </properties>
-    <repositories>
-        <repository>
-            <id>eventuate-release</id>
-            <url>http://mavenrepo.eventuate.io/release</url>
-        </repository>
-    </repositories>
+<!--    -->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>eventuate-release</id>-->
+<!--            <url>http://mavenrepo.eventuate.io/release</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,10 +46,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -168,6 +169,7 @@
             <artifactId>spring-cloud-openfeign-core</artifactId>
             <version>3.0.3</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
@@ -203,62 +205,19 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
 
-<!--        implement io.eventuate.tram -->
-        <dependency>
-            <groupId>net.chrisrichardson.eventstore.client</groupId>
-            <artifactId>eventstore-java-client_2.10</artifactId>
-            <version>${eventStoreClientVersion}</version>
-        </dependency>
-<!--        for real event store client library-->
-        <dependency>
-            <groupId>net.chrisrichardson.eventstore.client</groupId>
-            <artifactId>eventstore-http-stomp-client_2.10</artifactId>
-            <version>${eventStoreClientVersion}</version>
-        </dependency>
-<!--        for embedded test event store-->
-        <dependency>
-            <groupId>net.chrisrichardson.eventstore.client</groupId>
-            <artifactId>eventstore-jdbc_2.10</artifactId>
-            <version>${eventStoreClientVersion}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.eventuate.tram.sagas/eventuate-tram-sagas-spring-participant -->
-        <dependency>
-            <groupId>io.eventuate.tram.sagas</groupId>
-            <artifactId>eventuate-tram-sagas-spring-participant</artifactId>
-            <version>0.18.0.RELEASE</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.eventuate.tram.core/eventuate-tram-spring-events -->
-        <dependency>
-            <groupId>io.eventuate.tram.core</groupId>
-            <artifactId>eventuate-tram-spring-events</artifactId>
-            <version>0.29.0.RELEASE</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.eventuate.tram.sagas/eventuate-tram-sagas-spring-in-memory -->
-        <dependency>
-            <groupId>io.eventuate.tram.sagas</groupId>
-            <artifactId>eventuate-tram-sagas-spring-in-memory</artifactId>
-            <version>0.18.0.RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.eventuate.tram.core</groupId>
-            <artifactId>eventuate-tram-spring-jdbc-kafka</artifactId>
-            <version>0.24.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>io.eventuate.tram.sagas</groupId>
-            <artifactId>eventuate-tram-sagas-spring-orchestration-simple-dsl</artifactId>
-            <version>0.13.0.RELEASE</version>
-        </dependency>
+
         <dependency>
             <groupId>ca.nomosnow</groupId>
             <artifactId>share-resource</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-
 
     </dependencies>
     <dependencyManagement>
