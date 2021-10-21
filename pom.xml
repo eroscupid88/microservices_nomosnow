@@ -13,7 +13,7 @@
     <description>Parent Pom for the nomosnow project</description>
     <modules>
         <module>sport-organization-event-create-department-service</module>
-        <module>event-request</module>
+        <module>event-request-service</module>
         <module>eureka-server</module>
         <module>configserver</module>
         <module>gateway-server</module>

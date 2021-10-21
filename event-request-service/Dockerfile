@@ -1,6 +1,3 @@
-
-#another way to set up dockerfile
-#
 ##stage 1
 #Start with a base image containing Java runtime
 FROM openjdk:11 as build

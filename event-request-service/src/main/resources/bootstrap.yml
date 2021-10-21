@@ -1,3 +1,4 @@
+redisserver: ''
 server:
   port: 7003
 spring:
@@ -7,7 +8,7 @@ spring:
     active: dev
   cloud:
     config:
-      uri: http://${configserver:localhost}:7071
+      uri: http://${CONFIG_HOST:localhost}:7071
       failFast: true
       retry:
         initialInterval: 3000
@@ -16,7 +17,7 @@ spring:
         maxAttempts: 20
 pulse:
   logstash:
-    host: ${logstash:localhost}:6000
+    host: ${LOGSTASH:localhost}:6000
 logging:
   level:
     com.netflix: WARN

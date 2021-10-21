@@ -9,9 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="gateway-server" />
+        <module name="event-request-service" />
         <module name="eureka-server" />
         <module name="sport-organization-event-create-department-service" />
-        <module name="event-request" />
         <module name="sport-organization-service" />
       </profile>
     </annotationProcessing>
@@ -19,6 +19,7 @@
       <module name="config-server" target="11" />
       <module name="eureka-server" target="11" />
       <module name="event-request" target="11" />
+      <module name="event-request-service" target="11" />
       <module name="eventuate-cdc-service" target="11" />
       <module name="gateway-server" target="11" />
       <module name="nomosnow" target="1.5" />
@@ -34,6 +35,7 @@
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="event-request" options="-parameters" />
+      <module name="event-request-service" options="-parameters" />
       <module name="eventuate-cdc-service" options="-parameters" />
       <module name="gateway-server" options="-parameters" />
       <module name="share-resource" options="-parameters" />

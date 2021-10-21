@@ -26,6 +26,7 @@ COPY 0.activate-additional-scripts.sh /docker-entrypoint-initdb.d
 COPY 1.initialize-database.sql /docker-entrypoint-initdb.d
 COPY 2.initialize-database.sql /docker-entrypoint-initdb.d
 COPY 3.initialize-database.sql /docker-entrypoint-initdb.d
+COPY tram-saga-init.sql /docker-entrypoint-initdb.d
 
 RUN mkdir additional-scripts
 RUN chown postgres -R /additional-scripts /docker-entrypoint-initdb.d
