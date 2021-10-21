@@ -8,11 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
-        <module name="sport-organization-service" />
         <module name="gateway-server" />
         <module name="eureka-server" />
         <module name="sport-organization-event-create-department-service" />
         <module name="event-request" />
+        <module name="sport-organization-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -359,6 +359,7 @@
       <item itemvalue="Docker.docker-compose.yml.eurekaserver: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.sportorganizationeventcreatedepartmentservice: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.postgres_database: Compose Deployment" />
+      <item itemvalue="Spring Boot.SportEventServiceApplication" />
       <item itemvalue="Spring Boot.SportOrganizationEventCreateDepartmentServiceApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
