@@ -12,7 +12,6 @@ import java.io.IOException;
 public class UserContextFilter implements Filter {
     private static final Logger logger = LoggerFactory.getLogger(UserContextFilter.class);
 
-
     /**
      *  doFilter method to retrived value of HTTPServlet header to UserContext which will be store in local thread
      * @param servletRequest HTTPServlet header request

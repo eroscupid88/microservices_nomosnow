@@ -14,6 +14,5 @@ public class GatewayServerApplication {
         SpringApplication.run(GatewayServerApplication.class, args);
     }
 
-    Logger logger = LoggerFactory.getLogger(GatewayServerApplication.class);
 
 }

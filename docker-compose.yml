@@ -20,28 +20,107 @@ services:
 #      - my-db:/var/lib/mysql
 #    networks:
 #      - backend
+#  if using mysql8
+#  mysql8:
+#    build:
+#      context: ./mysql-eventuate-cdc
+#      dockerfile: Dockerfile-mysql8
+#    image: eventuateio/eventuate-mysql8
+#    ports:
+#      - 3307:3307
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=rootpassword
+#      - MYSQL_USER=mysqluser
+#      - MYSQL_PASSWORD=mysqlpw
+#      - USE_DB_ID=true
+#      - USE_JSON_PAYLOAD_AND_HEADERS=${USE_JSON_PAYLOAD_AND_HEADERS}
 
-  postgresql_database:
-    image: postgres:latest
-    container_name: postgresql_database
-    restart: on-failure
-    command: -p 5000
-    expose:
-      - "5000"
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.2.4
+    container_name: zookeeper
     ports:
-      - "5000:5000"
+      - 2181:2181
     environment:
-      POSTGRES_USER: "eventuate"
-      POSTGRES_PASSWORD: "eventuate"
-      POSTGRES_DB: "eventuate"
+      ZOOKEEPER_CLIENT_PORT: 2181
+      KAFKA_HEAP_OPTS: -Xmx64m
+    networks:
+      backend:
+        aliases:
+          - "zookeeper"
+
+  kafka:
+    image: "confluentinc/cp-kafka:5.2.4"
+    container_name: kafka
+    ports:
+      - 9092:9092
+      - 29092:29092
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_LISTENERS: LC://kafka:29092,LX://kafka:9092
+      KAFKA_ADVERTISED_LISTENERS: LC://kafka:29092,LX://${DOCKER_HOST_IP:-localhost}:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LC:PLAINTEXT,LX:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: LC
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_HEAP_OPTS: -Xmx192m
     volumes:
-      - ./postgresql/sportevent_init.sql:/docker-entrypoint-initdb.d/1-sportevent_init.sql
-      - ./postgresql/sportevent_data.sql:/docker-entrypoint-initdb.d/2-sportevent_data.sql
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      backend:
+        aliases:
+          - "kafka"
+  eventuate-cdc-service:
+    image: eventuateio/eventuate-tram-cdc-mysql-service
+    container_name: eventuate-cdc-service
+    ports:
+      - "8099:8080"
+    links:
+      - postgres_database
+      - kafka
+      - zookeeper
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_database:5005/eventuate
+      SPRING_DATASOURCE_USERNAME: eventuate
+      SPRING_DATASOURCE_PASSWORD: eventuate
+      SPRING_DATASOURCE_TEST_ON_BORROW: "true"
+      SPRING_DATASOURCE_VALIDATION_QUERY: SELECT 1
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      EVENTUATELOCAL_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      EVENTUATELOCAL_ZOOKEEPER_CONNECTION_STRING: zookeeper:2181
+
+      EVENTUATELOCAL_CDC_READER_NAME: PostgresPollingReader
+      EVENTUATE_OUTBOX_ID: 1
+      SPRING_PROFILES_ACTIVE: EventuatePolling
+      EVENTUATE_CDC_TYPE: EventuateTram
+      JAVA_OPTS: -Xmx64m
+#      EVENTUATE_CDC_PIPELINE_PIPELINE1_TYPE: eventuate-tram
+#      EVENTUATE_CDC_PIPELINE_PIPELINE1_READER: reader1
+#      EVENTUATE_CDC_PIPELINE_PIPELINE1_EVENTUATEDATABASESCHEMA: sport-events-service
+
+  postgres_database:
+    build:
+      context: ./postgresql-eventuate-cdc
+    image: postgres
+    container_name: postgres_database
+    restart: on-failure
+    command: -p 5001 -p 5002 -p 5003 -p 5004 -p 5005
+    expose:
+      - 5001-5005
+    ports:
+      - 5001-5005:5001-5005
+    environment:
+      POSTGRES_USER: eventuate
+      POSTGRES_PASSWORD: eventuate
+      POSTGRES_DB:       eventuate
+      USE_DB_ID: "true"
+    volumes:
       - ./postgresql/organization_init.sql:/docker-entrypoint-initdb.d/1-organization_init.sql
       - ./postgresql/organization_data.sql:/docker-entrypoint-initdb.d/2-organization_data.sql
-
+      - ./postgresql/sportevent_init.sql:/docker-entrypoint-initdb.d/1-sportevent_init.sql
+      - ./postgresql/sportevent_data.sql:/docker-entrypoint-initdb.d/2-sportevent_data.sql
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost" ]
+      test: ["CMD", "curl", "-f", "http://localhost"]
       interval: 1m30s
       timeout: 10s
       retries: 3
@@ -49,12 +128,13 @@ services:
     networks:
       backend:
         aliases:
-          - "postgresql_databases"
-
+          - "database"
   configserver:
     build: ./configserver
     image: configserver:latest
     container_name: configServer
+    environment:
+      PROFILE: "dev"
     ports:
       - "7071:7071"
     networks:
@@ -72,14 +152,14 @@ services:
         window: 120s
     container_name: eurekaServer
     ports:
-      - '7070:7070'
+      - "7070:7070"
     depends_on:
-      - postgresql_database
+      - postgres_database
       - configserver
     networks:
       backend:
         aliases:
-          - 'eurekaserver'
+          - "eurekaserver"
   gatewayserver:
     build: ./gateway-server
     image: gatewayserver:latest
@@ -100,7 +180,7 @@ services:
       EUREKASERVER_PORT: "7070"
       CONFIGSERVER_PORT: "7071"
     depends_on:
-      - postgresql_database
+      - postgres_database
       - configserver
       - eurekaserver
     networks:
@@ -136,43 +216,16 @@ services:
 #          - "keycloak"
 
 
-
-#  zookeeper:
-#    image: wurstmeister/zookeeper:latest
-#    container_name: zookeeperServer
-#    ports:
-#      - 2181:2181
-#    networks:
-#      backend:
-#        aliases:
-#          - "zookeeper"
-#  kafkaserver:
-#    image: wurstmeister/kafka:latest
-#    container_name: kafkaServer
-#    ports:
-#      - 9092:9092
-#    environment:
-#      - KAFKA_ADVERTISED_HOST_NAME=kafka
-#      - KAFKA_ADVERTISED_PORT=9092
-#      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-#      - KAFKA_CREATE_TOPICS=dresses:1:1,ratings:1:1
-#    volumes:
-#      - "/var/run/docker.sock:/var/run/docker.sock"
-#    depends_on:
-#      - zookeeper
-#    networks:
-#      backend:
-#        aliases:
-#          - "kafka"
   redisserver:
     image: redis:alpine
     container_name: redisServer
     ports:
-      - '6379:6379'
+      - 6379-6382:6379-6382
     networks:
       backend:
         aliases:
           - "redis"
+
 
 
 #      ELK stack for logging and debugging
@@ -193,9 +246,9 @@ services:
       - my-db:/usr/share/elasticsearch/data
     ports:
 #       Cluster communication
-      - '9300:9300'
+      - 9300:9300
 #       REST communication
-      - '9200:9200'
+      - 9200:9200
     networks:
       backend:
         aliases:
@@ -206,7 +259,7 @@ services:
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9300"
     ports:
-      - '5601:5601'
+      - 5601:5601
     networks:
       backend:
         aliases:
@@ -237,37 +290,39 @@ services:
       backend:
         aliases:
           - "zipkin"
+
+
 # Service instances
-  sporteventservice:
-    build: ./sport_event_service
-    image: sport-event-service:latest
-    container_name: sport-event-service
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
-    environment:
-      PROFILE: "dev"
-      CONFIGSERVER_URI: "http://configserver:7071"
-      CONFIGSERVER_PORT:   "7071"
-      DATABASESERVER_PORT: "5000"
-    depends_on:
-      - postgresql_database
-      - configserver
-#      - kafkaserver
-    ports:
-      - "7000:7000"
-    networks:
-      backend:
-        aliases:
-          - "sporteventservice"
-#
-  sportorganizationservice:
-    build: ./sport-organization-service
-    image: sport-organization-service:latest
-    container_name: sport-organization-service
+#  sporteventservice:
+#    build: ./sport_event_service
+#    image: sport-event-service:latest
+#    container_name: sport-event-service
+#    deploy:
+#      restart_policy:
+#        condition: on-failure
+#        delay: 5s
+#        max_attempts: 3
+#        window: 120s
+#    environment:
+#      PROFILE: "dev"
+#      CONFIGSERVER_URI: "http://configserver:7071"
+#      CONFIGSERVER_PORT:   "7071"
+#      DATABASESERVER_PORT: "5000"
+#    depends_on:
+#      - postgres_database
+#      - configserver
+##      - kafkaserver
+#    ports:
+#      - "7000:7000"
+#    networks:
+#      backend:
+#        aliases:
+#          - "sporteventservice"
+##
+  sportorganizationeventcreatedepartmentservice:
+    build: ./sport-organization-event-create-department-service
+    image: sport-organization-event-create-department-service:latest
+    container_name: sport-organization-event-create-department-service
     deploy:
       restart_policy:
         condition: on-failure
@@ -280,69 +335,40 @@ services:
       CONFIGSERVER_PORT:   "7071"
       DATABASESERVER_PORT: "5001"
     depends_on:
-      - postgresql_database
+      - postgres_database
       - configserver
-#      - kafkaserver
+      - kafka
     ports:
       - "7001:7001"
     networks:
       backend:
         aliases:
-        - "sportorganizationservice"
-
-#
-#  organization_database:
-#    image: postgres:latest
-#    container_name: postgres_organization_database
-#    restart: on-failure
-#    command: -p 5001
-#    expose:
-#      - "5001"
-#    ports:
-#      - "5001:5001"
-#    environment:
-#      POSTGRES_USER: "postgres"
-#      POSTGRES_PASSWORD: "postgres"
-#      POSTGRES_DB:       "sporteventorganization"
-#    volumes:
-#      - ./postgresql/organization_init.sql:/docker-entrypoint-initdb.d/1-organization_init.sql
-#      - ./postgresql/organization_data.sql:/docker-entrypoint-initdb.d/2-organization_data.sql
-#    healthcheck:
-#      test: ["CMD", "curl", "-f", "http://localhost"]
-#      interval: 1m30s
-#      timeout: 10s
-#      retries: 3
-#      start_period: 40s
-#    networks:
-#      backend:
-#        aliases:
-#          - "organization_database"
-#  sportevent_database:
-#    image: postgres:latest
-#    container_name: postgres_sportevent_database
-#    restart: on-failure
-#    command: -p 5000
-#    expose:
-#      - "5000"
-#    ports:
-#      - "5000:5000"
-#    environment:
-#      POSTGRES_USER: "postgres"
-#      POSTGRES_PASSWORD: "postgres"
-#      POSTGRES_DB:       "sporteventservice"
-#    volumes:
-#      - ./postgresql/sportevent_init.sql:/docker-entrypoint-initdb.d/1-sportevent_init.sql
-#      - ./postgresql/sportevent_data.sql:/docker-entrypoint-initdb.d/2-sportevent_data.sql
-#    healthcheck:
-#      test: ["CMD", "curl", "-f", "http://localhost"]
-#      interval: 1m30s
-#      timeout: 10s
-#      retries: 3
-#      start_period: 40s
-#    networks:
-#      backend:
-#        aliases:
-#          - "sportevent_databases"
+        - "sportorganizationeventcreatedepartmentservice"
+  eventrequestservice:
+    build: ./event-request
+    image: event-request-service:latest
+    container_name: event-request-service
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      PROFILE: "dev"
+      CONFIGSERVER_URI: "http://configserver:7071"
+      CONFIGSERVER_PORT: "7071"
+      DATABASESERVER_PORT: "5005"
+    depends_on:
+      - postgres_database
+      - configserver
+      - kafka
+    ports:
+      - "7003:7003"
+    networks:
+      backend:
+        aliases:
+          - "eventrequestservice"
 
 networks:
   backend:

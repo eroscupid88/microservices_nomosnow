@@ -8,8 +8,18 @@
         <option value="$PROJECT_DIR$/sport_event_service/pom.xml" />
         <option value="$PROJECT_DIR$/sport-organization-service/pom.xml" />
         <option value="$PROJECT_DIR$/gateway-server/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/event-request/pom.xml" />
+        <option value="$PROJECT_DIR$/sport-event-service-api/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/share-resource/pom.xml" />
+        <option value="$PROJECT_DIR$/sport-event-service-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sport_event_service/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

@@ -1,9 +1,7 @@
 package ca.nomosnow.sport_event_service.service.client;
 
-import brave.Tracer;
-import ca.nomosnow.sport_event_service.model.SportOrganization;
+import ca.nomosnow.sport_event_service.domain.model.SportOrganization;
 import ca.nomosnow.sport_event_service.redisCache.RedisCacheSupport;
-import ca.nomosnow.sport_event_service.repository.OrganizationRedisRepository;
 import ca.nomosnow.sport_event_service.utils.UserContext;
 //import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.slf4j.Logger;

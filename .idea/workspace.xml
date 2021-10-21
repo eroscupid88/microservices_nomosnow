@@ -22,7 +22,55 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="" />
+    <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_common_messaging_eventuate_messaging_partition_management_0_10_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_messaging_kafka_eventuate_messaging_kafka_basic_consumer_0_14_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_messaging_kafka_eventuate_messaging_kafka_common_0_14_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_messaging_kafka_eventuate_messaging_kafka_consumer_0_14_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_messaging_kafka_eventuate_messaging_kafka_spring_basic_consumer_0_14_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_messaging_kafka_eventuate_messaging_kafka_spring_common_0_14_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_messaging_kafka_eventuate_messaging_kafka_spring_consumer_0_14_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_core_eventuate_tram_aggregate_domain_events_0_29_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_core_eventuate_tram_consumer_kafka_0_29_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_core_eventuate_tram_producer_jdbc_0_29_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_core_eventuate_tram_spring_consumer_kafka_0_29_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_core_eventuate_tram_spring_jdbc_kafka_0_29_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_core_eventuate_tram_spring_producer_jdbc_0_29_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_sagas_eventuate_tram_sagas_orchestration_0_18_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_eventuate_tram_sagas_eventuate_tram_sagas_spring_orchestration_0_18_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_3_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__uk_co_real_logic_sbe_all_1_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/event-request-service-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/java/ca/nomosnow/eventrequest/configuration/ConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/java/ca/nomosnow/eventrequest/configuration/location/LocationConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/java/ca/nomosnow/eventrequest/configuration/messagesource/NomosnowMessageSourceConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/java/ca/nomosnow/eventrequest/something/Something.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/resources/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/resources/messages_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event-request/src/main/resources/messages_es.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport-organization-event-create-department-service/src/main/resources/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport-organization-event-create-department-service/src/main/resources/messages_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sport-organization-event-create-department-service/src/main/resources/messages_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport-organization-event-create-department-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-event-create-department-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/SportEventServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/configuration/SportEventCommandHandlersConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/sagaspaticipants/SportEventCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventCommandHandler.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +90,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dillon" />
+        <entry key="$PROJECT_DIR$" value="dev-nokeycloak" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,12 +132,16 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="JPA Structure" value="true" />
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
       </map>
     </option>
   </component>
@@ -108,39 +160,41 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/sport-organization-service/HELP.md" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gateway-server/src/main/resources" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15429688" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.side.proportion" value="0.2488426" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gateway-server/src/main/resources" />
-      <recent name="$PROJECT_DIR$/sport_event_service/src/main/resources" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/postgresql" />
-      <recent name="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/model" />
+      <recent name="$PROJECT_DIR$/event-request/src/main/java/ca/nomosnow/eventrequest" />
+      <recent name="$PROJECT_DIR$/configserver/src/main/resources/config" />
+      <recent name="$PROJECT_DIR$/event-request" />
+      <recent name="$PROJECT_DIR$/event-request/src/main/resources" />
+      <recent name="$PROJECT_DIR$/sport-organization-event-create-department-service/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/mysql_keycloak" />
       <recent name="$PROJECT_DIR$/mysql_keycloak/realm-export" />
       <recent name="$PROJECT_DIR$/realm-export" />
-      <recent name="$PROJECT_DIR$/postgresql" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ca.nomosnow.sportorganizationservice.events.model" />
-      <recent name="ca.nomosnow.sportorganizationservice.events.source" />
-      <recent name="ca.nomosnow.sport_event_service.config" />
-      <recent name="ca.nomosnow.sportorganizationservice.config" />
-      <recent name="ca.nomosnow.sportorganizationservice.controller" />
+      <recent name="ca.nomosnow.sportorganizationservice.configuration.messagesource" />
+      <recent name="ca.nomosnow.sportorganizationservice" />
+      <recent name="ca.nomosnow.sportorganizationservice.location" />
+      <recent name="ca.nomosnow.sportorganizationservice.redis" />
+      <recent name="ca.nomosnow.sport_event_service.configuration" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -149,8 +203,9 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.SportEventServiceApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="eureka-server" />
       <method v="2">
@@ -184,6 +239,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EventRequestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="event-request" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.eventrequest.EventRequestApplication" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GatewayserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gateway-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.gatewayserver.GatewayServerApplication" />
@@ -199,16 +264,16 @@
       <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.sport_event_service.SportEventServiceApplication" />
       <option name="ACTIVE_PROFILES" value="dev" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SportEventServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="sport_event_service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.sport_event_service.SportEventServiceApplication" />
+    <configuration name="SportOrganizationEventCreateDepartmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sport-organization-event-create-department-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ca.nomosnow.sportorganizationeventcreatedepartmentservice.SportOrganizationEventCreateDepartmentServiceApplication" />
       <option name="ACTIVE_PROFILES" value="dev" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -249,12 +314,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.gatewayserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.eventrequestservice: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="gatewayserver" />
+              <option value="eventrequestservice" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -262,12 +327,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.organization_database: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.postgres_database: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="organization_database" />
+              <option value="postgres_database" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -275,12 +340,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.redisserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.sportorganizationeventcreatedepartmentservice: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="redisserver" />
+              <option value="sportorganizationeventcreatedepartmentservice" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -289,24 +354,26 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.eventrequestservice: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.configserver: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.eurekaserver: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.gatewayserver: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.redisserver: Compose Deployment" />
-      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Docker.docker-compose.yml.sportorganizationeventcreatedepartmentservice: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.postgres_database: Compose Deployment" />
       <item itemvalue="Spring Boot.SportEventServiceApplication" />
-      <item itemvalue="Spring Boot.SportOrganizationServiceApplication" />
+      <item itemvalue="Spring Boot.SportOrganizationEventCreateDepartmentServiceApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
+      <item itemvalue="Spring Boot.SportOrganizationServiceApplication" />
+      <item itemvalue="Spring Boot.EventRequestApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.redisserver: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.gatewayserver: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.eurekaserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.postgres_database: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.configserver: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.organization_database: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.sportorganizationeventcreatedepartmentservice: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.eventrequestservice: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -349,6 +416,16 @@
       <workItem from="1633886956368" duration="599000" />
       <workItem from="1634072699190" duration="845000" />
       <workItem from="1634078647440" duration="2289000" />
+      <workItem from="1634333319860" duration="857000" />
+      <workItem from="1634337323497" duration="231000" />
+      <workItem from="1634337593956" duration="446000" />
+      <workItem from="1634338279788" duration="252000" />
+      <workItem from="1634396016903" duration="6270000" />
+      <workItem from="1634422968131" duration="3854000" />
+      <workItem from="1634429771842" duration="14710000" />
+      <workItem from="1634614976603" duration="13532000" />
+      <workItem from="1634702253055" duration="6119000" />
+      <workItem from="1634744977744" duration="6337000" />
     </task>
     <servers />
   </component>
@@ -375,19 +452,6 @@
           <line>14</line>
           <properties class="ca.nomosnow.sport_event_service.service.client.SportOrganizationFeignClient" />
           <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java</url>
-          <line>133</line>
-          <properties class="ca.nomosnow.sport_event_service.service.SportEventService">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/service/SportEventService.java</url>
-          <line>150</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

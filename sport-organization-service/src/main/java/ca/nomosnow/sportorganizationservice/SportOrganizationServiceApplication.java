@@ -1,38 +1,36 @@
 package ca.nomosnow.sportorganizationservice;
 
+import ca.nomosnow.sportorganizationservice.configuration.messagesource.NomosnowMessageSourceConfiguration;
 import ca.nomosnow.sportorganizationservice.utils.UserContextInterceptor;
-import org.apache.kafka.common.KafkaFuture;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.client.RestTemplate;
 
-import javax.xml.transform.Source;
-import java.util.Collections;
 import java.util.List;
 
 @SpringBootApplication
 @EnableEurekaClient
 @RefreshScope
+@Import({
+//        SportEventCommandHandlersConfiguration.class,
+        NomosnowMessageSourceConfiguration.class})
 public class SportOrganizationServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SportOrganizationServiceApplication.class, args);
     }
 
-
-    private static final Logger logger = LoggerFactory.getLogger(SportOrganizationServiceApplication.class);
     /**
      * Loadbalancer
      * @return restTemplate
      */
-    @LoadBalanced
+    @Primary
+//    @LoadBalanced
     @Bean
     RestTemplate getRestTemplate() {
         RestTemplate template = new RestTemplate();
@@ -42,9 +40,4 @@ public class SportOrganizationServiceApplication {
 
         return template;
     }
-
-
-
-
-
 }
