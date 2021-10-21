@@ -22,42 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_api_2_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_json_2_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_streams_2_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_rocksdb_rocksdbjni_5_18_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_function_context_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_function_core_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_stream_kafka_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_binder_kafka_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_binder_kafka_core_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_binder_kafka_streams_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_core_5_5_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_jmx_5_5_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_kafka_5_5_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_kafka_spring_kafka_2_7_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/gateway-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/gateway-server.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-event-service-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/config/sport-organization-service-native.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/events/model/OrganizationChangeModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/java/ca/nomosnow/sportorganizationservice/events/source/SimpleSourceBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/resources/application-native.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport-organization-service/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport-organization-service/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/CustomChannels.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/handler/OrganizationChangeHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/java/ca/nomosnow/sport_event_service/events/model/OrganizationChangeModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sport_event_service/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sport_event_service/src/main/resources/logback-spring.xml" afterDir="false" />
-    </list>
+    <list default="true" id="52e61a60-93be-4fa0-b11a-ecfceaeb0be5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -328,12 +293,12 @@
       <item itemvalue="Docker.docker-compose.yml.configserver: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.eurekaserver: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.gatewayserver: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.redisserver: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.SportEventServiceApplication" />
       <item itemvalue="Spring Boot.SportOrganizationServiceApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
-      <item itemvalue="Docker.docker-compose.yml.redisserver: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
