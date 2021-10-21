@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/event-request/pom.xml" />
         <option value="$PROJECT_DIR$/sport-event-service-api/pom.xml" />
         <option value="$PROJECT_DIR$/event-request-service/pom.xml" />
+        <option value="$PROJECT_DIR$/common/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
