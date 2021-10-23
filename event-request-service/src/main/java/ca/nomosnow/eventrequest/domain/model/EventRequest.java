@@ -1,13 +1,20 @@
 package ca.nomosnow.eventrequest.domain.model;
 
-import ca.nomosnow.common.Address;
-import ca.nomosnow.common.Money;
-import ca.nomosnow.common.Sport;
+import ca.nomosnow.api.events.EventRequestAuthorized;
+import ca.nomosnow.api.events.EventRequestCreatedEvent;
+import ca.nomosnow.api.events.EventRequestDomainEvent;
+import ca.nomosnow.api.events.SportEventDetails;
+import ca.nomosnow.common.UnsupportedStateTransitionException;
 import ca.nomosnow.eventrequest.domain.EventRequestState;
+import io.eventuate.tram.events.aggregates.ResultWithDomainEvents;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
+
+import static ca.nomosnow.eventrequest.domain.EventRequestState.APPROVED;
+import static java.util.Collections.singletonList;
 
 @Entity
 @Getter
@@ -22,22 +29,36 @@ public class EventRequest {
     private Long version;
 
     @Enumerated(EnumType.STRING)
-    private EventRequestState state;
+    private EventRequestState eventRequestState;
 
-    private Long comsumerId;
+    private Long consumerId;
 
     private Long SportOrganizationEventCreateDepartmentId;
 
-    @Embedded
-    private Money money = new Money(Integer.MAX_VALUE);
-    @Embedded
-    private Sport sport;
-    @Embedded
-    private Address address;
-
-
     public EventRequest() {
+    }
 
+    public EventRequest(Long consumerId, Long sportOrganizationEventCreateDepartmentId) {
+        this.consumerId = consumerId;
+        this.SportOrganizationEventCreateDepartmentId = sportOrganizationEventCreateDepartmentId;
+        this.eventRequestState = EventRequestState.APPROVAL_PENDING;
+    }
+    public static ResultWithDomainEvents<EventRequest, EventRequestDomainEvent> createEventRequest(long consumerId, SportOrganizationEventCreateDepartment sportOrganizationEventCreateDepartment) {
+        EventRequest eventRequest = new EventRequest(consumerId, sportOrganizationEventCreateDepartment.getId());
+        List<EventRequestDomainEvent> events = singletonList(new EventRequestCreatedEvent(
+                new SportEventDetails(consumerId, sportOrganizationEventCreateDepartment.getId())));
+        return new ResultWithDomainEvents<>(eventRequest, events);
+    }
+
+    public List<EventRequestDomainEvent> noteApproved() {
+        switch (eventRequestState) {
+            case APPROVAL_PENDING:
+                this.eventRequestState = APPROVED;
+                return singletonList(new EventRequestAuthorized());
+            default:
+                // need some exception
+                throw new UnsupportedStateTransitionException(eventRequestState);
+        }
     }
 
 }

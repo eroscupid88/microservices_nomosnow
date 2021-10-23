@@ -1,0 +1,12 @@
+{
+  "amount": 29.95,
+  "currency": "EUR",
+  "formatted": "29,95 EUR"
+},
+{
+  "street1": "1940 EastHill",
+  "street2": null,
+  "city": "Saskatoon",
+  "province": "Saskatchewan",
+  "country": "Canada"
+}

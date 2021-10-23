@@ -1,0 +1,4 @@
+/Users/dillonvu/nomosnow/event-request-service-api/src/main/java/ca/nomosnow/api/events/EventRequestDomainEvent.java
+/Users/dillonvu/nomosnow/event-request-service-api/src/main/java/ca/nomosnow/api/events/EventRequestAuthorized.java
+/Users/dillonvu/nomosnow/event-request-service-api/src/main/java/ca/nomosnow/api/events/EventRequestCreatedEvent.java
+/Users/dillonvu/nomosnow/event-request-service-api/src/main/java/ca/nomosnow/api/events/SportEventDetails.java

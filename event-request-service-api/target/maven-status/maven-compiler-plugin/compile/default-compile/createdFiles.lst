@@ -1,0 +1,4 @@
+ca/nomosnow/api/events/EventRequestCreatedEvent.class
+ca/nomosnow/api/events/SportEventDetails.class
+ca/nomosnow/api/events/EventRequestAuthorized.class
+ca/nomosnow/api/events/EventRequestDomainEvent.class

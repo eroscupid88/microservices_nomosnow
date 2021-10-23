@@ -16,11 +16,6 @@
     <description>sport event service for nomosnow</description>
 <!--    <packaging>pom</packaging>-->
 
-    <modules>
-        <module>../sport-event-service-api</module>
-        <module>../share-resource</module>
-    </modules>
-
     <properties>
         <docker.image.prefix>dillon</docker.image.prefix>
         <java.version>11</java.version>

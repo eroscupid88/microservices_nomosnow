@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <webroots />
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/../../event-request-service-api/src/main/java" />
+          <root url="file://$MODULE_DIR$/../../event-request-service-api/src/main/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping />
+        <naming-strategy-map />
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output url="file://$MODULE_DIR$/../../event-request-service-api/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../../event-request-service-api/target/test-classes" />
+    <content url="file://$MODULE_DIR$/../../event-request-service-api">
+      <sourceFolder url="file://$MODULE_DIR$/../../event-request-service-api/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../event-request-service-api/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../event-request-service-api/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../event-request-service-api/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="Maven: io.eventuate.tram.core:eventuate-tram-events:0.29.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.eventuate.tram.core:eventuate-tram-messaging:0.29.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.eventuate.common:eventuate-common-json-mapper:0.14.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.eventuate.common:eventuate-common-id:0.14.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.12.5" level="project" />
+  </component>
+</module>

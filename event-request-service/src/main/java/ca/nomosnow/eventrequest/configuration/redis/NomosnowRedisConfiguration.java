@@ -1,6 +1,5 @@
 package ca.nomosnow.eventrequest.configuration.redis;
 
-
 import ca.nomosnow.eventrequest.configuration.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
