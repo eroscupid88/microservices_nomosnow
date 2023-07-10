@@ -17,13 +17,14 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/share-resource/pom.xml" />
-        <option value="$PROJECT_DIR$/sport-event-service-api/pom.xml" />
         <option value="$PROJECT_DIR$/sport_event_service/pom.xml" />
       </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
   </component>
 </project>

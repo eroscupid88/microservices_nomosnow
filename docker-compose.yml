@@ -3,23 +3,23 @@ version: '3.9'
 
 services:
   ## optional for using mysql for keycloak
-#  mysql-keycloak:
-#    image: mysql:latest
-#    container_name: mysql-keycloak
-#    restart: always
-#    environment:
-#      MYSQL_ROOT_PASSWORD: root
-#      MYSQL_DATABASE: keycloak
-#      MYSQL_USER: keycloak
-#      MYSQL_PASSWORD: keycloak
-#    expose:
-#      - 3306
-#    ports:
-#      - 3306:3306
-#    volumes:
-#      - my-db:/var/lib/mysql
-#    networks:
-#      - backend
+ mysql-keycloak:
+   image: mysql:latest
+   container_name: mysql-keycloak
+   restart: always
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: keycloak
+     MYSQL_USER: keycloak
+     MYSQL_PASSWORD: keycloak
+   expose:
+     - 3306
+   ports:
+     - 3306:3306
+   volumes:
+     - my-db:/var/lib/mysql
+   networks:
+     - backend
 #  if using mysql8
 #  mysql8:
 #    build:

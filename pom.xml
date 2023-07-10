@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ca.nomosnow.dillon</groupId>
+    <groupId>ca.nomosnow</groupId>
     <artifactId>nomosnow</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -13,10 +13,10 @@
     <description>Parent Pom for the nomosnow project</description>
     <modules>
         <module>sport-organization-event-create-department-service</module>
-        <module>event-request-service</module>
         <module>eureka-server</module>
         <module>configserver</module>
         <module>gateway-server</module>
+        <module>event-request-parent</module>
     </modules>
 
     <build>

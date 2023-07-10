@@ -14,7 +14,6 @@ public class ErrorMessage {
 	private String code;
     private String detail;
 
-
 	/**
 	 * Construct ErrorMessage with 3 arguments
 	 * @param message String message

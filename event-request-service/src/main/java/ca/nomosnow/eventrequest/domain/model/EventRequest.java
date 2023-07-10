@@ -1,9 +1,9 @@
 package ca.nomosnow.eventrequest.domain.model;
 
-import ca.nomosnow.api.events.EventRequestAuthorized;
-import ca.nomosnow.api.events.EventRequestCreatedEvent;
-import ca.nomosnow.api.events.EventRequestDomainEvent;
-import ca.nomosnow.api.events.SportEventDetails;
+import ca.nomosnow.eventrequestservice.api.events.EventRequestAuthorized;
+import ca.nomosnow.eventrequestservice.api.events.EventRequestCreatedEvent;
+import ca.nomosnow.eventrequestservice.api.events.EventRequestDomainEvent;
+import ca.nomosnow.eventrequestservice.api.events.SportEventDetails;
 import ca.nomosnow.common.UnsupportedStateTransitionException;
 import ca.nomosnow.eventrequest.domain.EventRequestState;
 import io.eventuate.tram.events.aggregates.ResultWithDomainEvents;

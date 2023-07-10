@@ -1,7 +1,7 @@
 package ca.nomosnow.eventrequest.service;
 
-import ca.nomosnow.api.events.EventRequestDomainEvent;
-import ca.nomosnow.api.events.SportEventDetails;
+import ca.nomosnow.eventrequestservice.api.events.EventRequestDomainEvent;
+import ca.nomosnow.eventrequestservice.api.events.SportEventDetails;
 import ca.nomosnow.eventrequest.domain.SportOrganizationEventCreateDepartmentNotFoundException;
 import ca.nomosnow.eventrequest.domain.model.EventRequest;
 import ca.nomosnow.eventrequest.domain.model.SportOrganizationEventCreateDepartment;
@@ -13,10 +13,7 @@ import io.eventuate.tram.events.aggregates.ResultWithDomainEvents;
 import io.eventuate.tram.sagas.orchestration.SagaManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Transactional
 public class EventRequestService {
@@ -37,8 +34,9 @@ public class EventRequestService {
         this.eventRequestServiceEventPublisher = eventRequestServiceEventPublisher;
     }
     public EventRequest createEventRequest(Long consumerId, Long sportOrganizationEventCreateDepartmentId) {
+        // get sportOrganizationEventCreateDepartment
         SportOrganizationEventCreateDepartment sportOrganizationEventCreateDepartment = sportOrganizationEventCreateDepartmentRepository.findById(sportOrganizationEventCreateDepartmentId).orElseThrow(() -> new SportOrganizationEventCreateDepartmentNotFoundException(sportOrganizationEventCreateDepartmentId));
-
+        //
         ResultWithDomainEvents<EventRequest, EventRequestDomainEvent> eventRequestAndEvents = EventRequest.createEventRequest(consumerId, sportOrganizationEventCreateDepartment);
 
         EventRequest eventRequest = eventRequestAndEvents.result;

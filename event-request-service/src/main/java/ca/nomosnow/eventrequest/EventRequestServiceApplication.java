@@ -21,7 +21,7 @@ import io.microservices.canvas.extractor.spring.annotations.ServiceDescription;
         NomosnowRedisConfiguration.class,
         NomosnowMessageSourceConfiguration.class,
         LocationConfiguration.class})
-@ServiceDescription(description="Manages Orders", capabilities = "Order Management")
+@ServiceDescription(description="Manages EventRequests", capabilities = "EventRequest Management")
 public class EventRequestServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(EventRequestServiceApplication.class, args);

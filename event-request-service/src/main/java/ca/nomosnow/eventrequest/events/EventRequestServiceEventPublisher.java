@@ -1,6 +1,6 @@
 package ca.nomosnow.eventrequest.events;
 
-import ca.nomosnow.api.events.EventRequestDomainEvent;
+import ca.nomosnow.eventrequestservice.api.events.EventRequestDomainEvent;
 import ca.nomosnow.eventrequest.domain.model.EventRequest;
 import io.eventuate.tram.events.aggregates.AbstractAggregateDomainEventPublisher;
 import io.eventuate.tram.events.publisher.DomainEventPublisher;

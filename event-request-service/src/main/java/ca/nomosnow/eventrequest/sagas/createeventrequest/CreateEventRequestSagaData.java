@@ -1,6 +1,6 @@
 package ca.nomosnow.eventrequest.sagas.createeventrequest;
 
-import ca.nomosnow.api.events.SportEventDetails;
+import ca.nomosnow.eventrequestservice.api.events.SportEventDetails;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang.builder.EqualsBuilder;
